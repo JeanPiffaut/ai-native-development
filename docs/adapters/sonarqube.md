@@ -37,17 +37,43 @@ El análisis se ejecuta como parte del pipeline de CI. Una tarea no se considera
 
 ---
 
-## Cómo ejecutar el análisis localmente
-
-*Completar cuando la configuración local esté disponible.*
+## Cómo obtener un reporte
 
 ```bash
-# Ejemplo base — ajustar según la configuración del proyecto
-npm run sonar
+bash scripts/sonar-report.sh
 ```
 
-Variables de entorno requeridas para el análisis:
-- Ver `adapters/env-config.md` para las variables `SONAR_*`
+Genera seis archivos en `.tmp/` (ignorado por git):
+
+| Archivo | Contenido |
+|---|---|
+| `sonar-quality-gate.json` | Estado del quality gate (PASS/FAIL) |
+| `sonar-issues.json` | Bugs y vulnerabilidades CRITICAL/MAJOR activos |
+| `sonar-hotspots.json` | Security hotspots pendientes de revisión |
+| `sonar-code-smells.json` | Code smells CRITICAL/MAJOR |
+| `sonar-new-code.json` | Todos los issues introducidos desde el último análisis |
+| `sonar-metrics.json` | Cobertura, duplicación, LOC y contadores generales |
+
+El script imprime un resumen en consola al terminar.
+
+Variables de entorno requeridas (en `.env`):
+
+| Variable | Descripción |
+|---|---|
+| `SONAR_HOST_URL` | URL del servidor SonarQube o SonarCloud |
+| `SONAR_TOKEN` | Token de autenticación |
+| `SONAR_PROJECT_KEY` | Clave del proyecto en SonarQube |
+
+## Del reporte al board
+
+La creación de tareas desde el reporte es una decisión humana — no automática. SonarQube genera muchos issues; no todos merecen ser una tarea. El flujo es:
+
+1. Correr `sonar-report.sh` → revisar `.tmp/`
+2. Filtrar qué issues son accionables ahora
+3. Agregar manualmente las tareas relevantes a `board.json`
+4. Vaciar `.tmp/` una vez procesado
+
+El criterio para agregar una tarea: ¿bloquea el quality gate o introduce riesgo real? Si es un code smell menor, puede quedar como deuda aceptada o ignorarse.
 
 ---
 
