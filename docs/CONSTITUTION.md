@@ -14,7 +14,7 @@ Al comenzar cualquier sesión, el agente DEBE leer en este orden:
 3. `knowledge/dominio.md`
 4. `knowledge/principios.md`
 5. `board.json` — para entender el estado actual del trabajo
-6. Las últimas 3 entradas en `decisions/` — para entender decisiones recientes
+6. `decisions/INDEX.md` — índice temático de todas las decisiones; incluye sección "Recientes" con las últimas confirmadas
 7. Todos los archivos en `standards/` — cada archivo es un estándar independiente; leerlos todos
 8. El adapter relevante en `adapters/` según la tarea a realizar
 

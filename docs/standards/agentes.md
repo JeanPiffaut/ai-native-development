@@ -24,7 +24,7 @@ El protocolo completo está en `CONSTITUTION.md §1`. Resumen:
 1. Leer CONSTITUTION.md
 2. Leer knowledge/ (negocio, dominio, principios)
 3. Leer board.json
-4. Leer últimas 3 decisiones en decisions/
+4. Leer decisions/INDEX.md (índice temático; incluye sección de recientes)
 5. Leer adapter relevante si aplica
 6. Declarar: qué leí, estado del proyecto, tarea a abordar
 ```
@@ -46,11 +46,12 @@ El protocolo completo está en `CONSTITUTION.md §1`. Resumen:
 
 ## Cómo actualizar el board
 
-El board refleja únicamente el trabajo activo. Las tareas completadas se eliminan — el historial de lo que se hizo vive en `decisions/` y en git, no en el board.
+El board refleja únicamente el trabajo activo. Las tareas completadas se eliminan — pero antes de eliminarlas se registran en `meta.historial`.
 
 Reglas:
 - Los IDs son numéricos de 4 dígitos con ceros a la izquierda: `0001`, `0002`, `0003`... Únicos y nunca reutilizados, aunque la tarea se haya eliminado
-- Cuando una tarea pasa a `listo`, se elimina del JSON
+- Al crear una tarea nueva, tomar `meta.ultimo_id`, incrementar en 1, y actualizar el campo
+- Al completar una tarea: agregar entrada a `meta.historial`, luego eliminar la tarea de `tareas`
 - Git es operación humana — el agente nunca ejecuta git aunque el board lo indique
 - `contexto` es estático — describe por qué existe la tarea y no cambia
 - `notas` es dinámico — array de strings donde el agente y el humano agregan entradas relevantes durante el trabajo (motivo de bloqueo, descubrimientos, cambios de alcance, etc.). Cada entrada es un string independiente.
@@ -59,7 +60,8 @@ Reglas:
 {
   "id": "0001",
   "titulo": "Descripción corta de la tarea",
-  "tipo": "feature | bug | deuda | investigacion | proceso",
+  "tipo": "feature | bug | deuda | investigacion | proceso | recurrente",
+  "cadencia": "mensual | trimestral | semestral | anual",
   "estado": "pendiente | haciendo | bloqueado",
   "prioridad": "alta | media | baja",
   "contexto": "Por qué existe esta tarea. Qué la originó. No cambia.",
@@ -68,6 +70,36 @@ Reglas:
   "creada": "YYYY-MM-DD"
 }
 ```
+
+La sección `meta` vive al final del JSON, después de `tareas`:
+
+```json
+"meta": {
+  "ultimo_id": "0001",
+  "historial": [
+    {
+      "id": "0001",
+      "titulo": "Descripción corta de la tarea",
+      "completada": "YYYY-MM-DD",
+      "decision_relacionada": "NNN o null"
+    }
+  ]
+}
+```
+
+## Tareas recurrentes
+
+Las tareas con `tipo: recurrente` representan trabajo periódico que debe repetirse. Incluyen el campo `cadencia` para indicar la frecuencia.
+
+Al completar una tarea recurrente, el agente **debe**:
+1. Crear una nueva instancia de la tarea con `creada` actualizada a la fecha actual
+2. Eliminar la tarea completada del board
+
+Si no se re-crea la tarea, el ciclo se rompe y la recurrencia se pierde. La re-creación es responsabilidad del agente que completa la tarea.
+
+El campo `cadencia` no es obligatorio en tareas de otros tipos. En tareas recurrentes, es obligatorio.
+
+---
 
 ## Definición de tareas
 

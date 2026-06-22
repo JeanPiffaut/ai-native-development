@@ -1,5 +1,22 @@
 {
   "proyecto": "AI-Native Development Framework",
   "actualizado": "2026-06-22",
-  "tareas": []
+  "tareas": [
+    {
+      "id": "0001",
+      "titulo": "Revisar y actualizar versiones en adapters/",
+      "tipo": "recurrente",
+      "cadencia": "trimestral",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "contexto": "Los adapters documentan versiones de herramientas (NestJS, TypeScript, Docker, etc.) que quedan obsoletas con el tiempo. Un agente siguiendo un adapter desactualizado puede instalar versiones viejas. Revisión trimestral garantiza que las versiones documentadas sigan siendo las estables actuales.",
+      "notas": [],
+      "decision_relacionada": "012",
+      "creada": "2026-06-22"
+    }
+  ],
+  "meta": {
+    "ultimo_id": "0001",
+    "historial": []
+  }
 }
