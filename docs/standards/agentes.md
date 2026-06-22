@@ -37,7 +37,7 @@ Ver `CONSTITUTION.md §1` — es la única fuente de verdad para el orden de lec
 
 ## Cómo actualizar el board
 
-El board refleja únicamente el trabajo activo. Las tareas completadas se eliminan — pero antes de eliminarlas se registran en `meta.historial`.
+El board refleja únicamente el trabajo activo. Las tareas completadas se eliminan; las que tienen `decision_relacionada` se registran en `meta.historial` antes de eliminarlas.
 
 Reglas:
 - Los IDs son numéricos de 4 dígitos con ceros a la izquierda: `0001`, `0002`, `0003`... Únicos y nunca reutilizados, aunque la tarea se haya eliminado
@@ -72,7 +72,7 @@ La sección `meta` vive al final del JSON, después de `tareas`:
       "id": "0001",
       "titulo": "Descripción corta de la tarea",
       "completada": "YYYY-MM-DD",
-      "decision_relacionada": "NNN o null"
+      "decision_relacionada": "NNN"
     }
   ]
 }
@@ -155,3 +155,4 @@ Si el orquestador o modelo tiene convenciones propias (ej. archivos de configura
 
 - **2026-06-22** — Eliminado resumen del protocolo de inicio; reemplazado por referencia directa a `CONSTITUTION.md §1` para evitar divergencias entre fuentes.
 - **2026-06-22** — Regla de historial refinada: solo las tareas con `decision_relacionada` se registran en `meta.historial` al completarse. Tareas sin decisión vinculada se eliminan directamente. Aplica también a tareas recurrentes (paso agregado).
+- **2026-06-22** — Párrafo introductorio de "Cómo actualizar el board" corregido: la frase incondicional "se registran en meta.historial" reemplazada por la versión condicional. Esquema JSON de historial: campo `decision_relacionada` corregido de "NNN o null" a "NNN" — en historial siempre es no-nulo por definición de [014].
