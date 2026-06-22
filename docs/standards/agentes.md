@@ -46,21 +46,43 @@ El protocolo completo está en `CONSTITUTION.md §1`. Resumen:
 
 ## Cómo actualizar el board
 
-Formato de cada tarea en `board.json`:
+El board refleja únicamente el trabajo activo. Las tareas completadas se eliminan — el historial de lo que se hizo vive en `decisions/` y en git, no en el board.
+
+Reglas:
+- Los IDs son numéricos de 4 dígitos con ceros a la izquierda: `0001`, `0002`, `0003`... Únicos y nunca reutilizados, aunque la tarea se haya eliminado
+- Cuando una tarea pasa a `listo`, se elimina del JSON
+- Git es operación humana — el agente nunca ejecuta git aunque el board lo indique
+- `contexto` es estático — describe por qué existe la tarea y no cambia
+- `notas` es dinámico — array de strings donde el agente y el humano agregan entradas relevantes durante el trabajo (motivo de bloqueo, descubrimientos, cambios de alcance, etc.). Cada entrada es un string independiente.
 
 ```json
 {
-  "id": "T-NNN",
+  "id": "0001",
   "titulo": "Descripción corta de la tarea",
   "tipo": "feature | bug | deuda | investigacion | proceso",
-  "estado": "pendiente | en-progreso | bloqueada | completada",
+  "estado": "pendiente | haciendo | bloqueado",
   "prioridad": "alta | media | baja",
-  "contexto": "Por qué existe esta tarea. Qué la originó.",
+  "contexto": "Por qué existe esta tarea. Qué la originó. No cambia.",
+  "notas": [],
   "decision_relacionada": "NNN o null",
-  "creada": "YYYY-MM-DD",
-  "actualizada": "YYYY-MM-DD"
+  "creada": "YYYY-MM-DD"
 }
 ```
+
+## Definición de tareas
+
+Toda tarea debe ser autoconclusiva: al completarse debe entregar algo funcional y en estado usable. Una tarea que deja el sistema en un estado intermedio o roto no es una tarea válida — debe dividirse o replantearse.
+
+Antes de agregar una tarea al board, verificar:
+- ¿Qué entrega exactamente cuando esté lista?
+- ¿El proyecto funciona correctamente después de completarla?
+- Si la respuesta a alguna de las dos es ambigua, dividir en tareas más pequeñas que sí la cumplan
+
+Ejemplos:
+- ❌ "Implementar módulo de autenticación" — demasiado amplio, no define qué entrega
+- ✅ "Implementar endpoint POST /auth/login con JWT" — entrega algo concreto y funcional
+- ❌ "Migrar base de datos" — puede dejar el sistema roto si no se completa todo
+- ✅ "Agregar migración para tabla users y verificar que la app levanta con ella aplicada"
 
 ---
 
@@ -85,11 +107,14 @@ No aplica cuando:
 ## Límites del agente
 
 El agente no debe:
+- Ejecutar operaciones git de ningún tipo — git es responsabilidad humana exclusiva
 - Tomar decisiones de arquitectura sin registrarlas
 - Modificar `CONSTITUTION.md` o decisiones confirmadas
 - Asumir que algo "no importa" sin verificarlo en `knowledge/principios.md`
 - Resolver ambigüedades silenciosamente cuando afectan el diseño
 - Asumir versiones de herramientas sin verificar — ver sección anterior
+
+**Sobre git:** el agente puede sugerir qué commitear, con qué mensaje y en qué rama, pero nunca ejecutar los comandos. La revisión humana antes del commit es una garantía deliberada del proceso.
 
 ---
 

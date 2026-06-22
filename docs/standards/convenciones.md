@@ -12,7 +12,7 @@
 | Knowledge | `nombre-descriptivo.md` | `negocio.md`, `dominio.md` |
 | Adapters | `nombre-tecnologia.md` | `nestjs.md`, `react.md` |
 | Templates | `nombre-del-template.md` | `decision.md` |
-| Tareas en board | ID correlativo con prefijo | `T-001`, `T-002` |
+| Tareas en board | Numérico de 4 dígitos | `0001`, `0002`, `0003` |
 
 ## Numeración de decisiones
 

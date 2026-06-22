@@ -3,59 +3,26 @@
   "actualizado": "2026-06-22",
   "tareas": [
     {
-      "id": "T-001",
-      "titulo": "Construir estructura base del framework",
-      "tipo": "proceso",
-      "estado": "completada",
-      "prioridad": "alta",
-      "contexto": "Diseño y construcción de CONSTITUTION.md, knowledge/, decisions/, standards/, adapters/, templates/ y CLAUDE.md.",
-      "decision_relacionada": "001",
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
-    },
-    {
-      "id": "T-002",
-      "titulo": "Completar knowledge/ del framework",
-      "tipo": "proceso",
-      "estado": "completada",
-      "prioridad": "alta",
-      "contexto": "Llenar los cuatro archivos de knowledge/ con el contexto real del framework: negocio, dominio, principios y stakeholders.",
-      "decision_relacionada": null,
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
-    },
-    {
-      "id": "T-003",
-      "titulo": "Registrar decisiones de diseño de la sesión inicial",
-      "tipo": "proceso",
-      "estado": "completada",
-      "prioridad": "alta",
-      "contexto": "Decisiones tomadas durante el diseño del framework que no quedaron registradas en el momento: estructura docs/, separación standards/adapters, ENVIRONMENT, sincronización manual, sin templates para board/adapters.",
-      "decision_relacionada": null,
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
-    },
-    {
-      "id": "T-004",
-      "titulo": "Crear tag de versión limpia del framework",
+      "id": "0005",
+      "titulo": "Publicar rama template en remoto",
       "tipo": "proceso",
       "estado": "pendiente",
       "prioridad": "alta",
-      "contexto": "Crear un tag git (v1.0.0 o similar) que marque el estado actual como template base limpio, antes de que este repo evolucione como proyecto propio.",
+      "contexto": "La rama template existe localmente con la versión limpia del framework. Hacer push para que esté disponible como punto de partida para nuevos proyectos.",
+      "notas": [],
       "decision_relacionada": null,
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
+      "creada": "2026-06-22"
     },
     {
-      "id": "T-005",
+      "id": "0006",
       "titulo": "Crear variante de template para NestJS",
       "tipo": "feature",
       "estado": "pendiente",
       "prioridad": "media",
-      "contexto": "A partir del tag limpio, crear una rama o repo con el framework pre-configurado para proyectos NestJS: adapters activos, decisiones iniciales de stack, estructura de src/ base.",
+      "contexto": "A partir de la rama template, crear una rama con el framework pre-configurado para proyectos NestJS: adapters activos relevantes, decisión de stack documentada, estructura de src/ base.",
+      "notas": [],
       "decision_relacionada": null,
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
+      "creada": "2026-06-22"
     }
   ]
 }
