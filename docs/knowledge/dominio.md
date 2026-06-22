@@ -1,34 +1,26 @@
 # Dominio
 
-- **Última actualización:** 2026-06-22
+- **Última actualización:** YYYY-MM-DD
 
 ---
 
 ## Glosario
 
+*Lista de términos clave del proyecto con su definición precisa. Incluir sinónimos y términos a evitar.*
+
 | Término | Definición | Sinónimos | Evitar usar |
 |---------|-----------|-----------|-------------|
-| CONSTITUTION | Archivo que define el contrato operativo del agente: qué lee, qué puede modificar, cómo se comporta | — | "instrucciones", "prompt del sistema" |
-| ADR | Architecture Decision Record — documento que registra una decisión con su contexto, alternativas y consecuencias | Decisión, registro de decisión | "notas", "comentarios" |
-| Adapter | Archivo que documenta convenciones específicas de una herramienta o tecnología concreta | — | "plugin", "módulo" |
-| Standard | Archivo que documenta un principio o metodología de trabajo que aplica independientemente de la tecnología | — | "regla", "norma" |
-| Board | Archivo `board.json` que representa el estado vivo de las tareas del proyecto | Tablero, backlog | "to-do list" |
-| Contexto de sesión | Conjunto de archivos que el agente lee al iniciar una sesión para entender el estado del proyecto | — | "memoria", "historial" |
-| Append-only | Política de `decisions/` donde los documentos nunca se editan; los cambios generan un nuevo documento | — | "inmutable" (no es lo mismo) |
+| *término* | *qué significa en este contexto específico* | | |
 
 ## Conceptos centrales
 
-### CONSTITUTION como contrato
-La CONSTITUTION no es un prompt ni un conjunto de sugerencias — es un contrato operativo. Define permisos, protocolos y jerarquía de verdad. El agente no puede ignorarla ni reinterpretarla. Solo puede ser modificada por el humano.
-
-### Archivos como memoria persistente
-El contexto del agente vive en archivos, no en la memoria del modelo. Esto significa que persiste entre sesiones, sobrevive cambios de modelo, es auditable y se acumula con el tiempo. La diferencia entre un agente con archivos y uno sin ellos es la diferencia entre alguien que toma notas y alguien que no.
+*Los 3-5 conceptos más importantes para entender cómo funciona este proyecto. Más detalle que el glosario.*
 
 ### Standards vs Adapters
 Los standards definen *cómo trabajamos* independientemente del stack — aplican en cualquier proyecto. Los adapters definen *cómo usamos una herramienta específica* — solo aplican si el proyecto usa esa herramienta. Ambos crecen preferentemente por acreción: incorporar algo nuevo significa crear un archivo nuevo. Editar un archivo existente es válido cuando el cambio es una corrección o evolución del mismo concepto — nunca para incorporar un concepto distinto en el mismo archivo.
 
-### Decisions como historial append-only
-Las decisiones nunca se editan. Si una decisión cambia, se crea una nueva que la supera. Esto garantiza que el historial de *por qué* se tomó cada decisión sea siempre legible y nunca se pierda contexto.
+### [Concepto 2]
+*Explicación. Cómo se relaciona con otros conceptos.*
 
 ## Relaciones entre conceptos
 

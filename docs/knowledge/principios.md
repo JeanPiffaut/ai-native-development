@@ -1,12 +1,13 @@
 # Principios
 
-- **Última actualización:** 2026-06-22
+- **Última actualización:** YYYY-MM-DD
 
 ---
 
 ## Principios de diseño
 
-Ordenados por prioridad — ante conflicto entre principios, gana el primero.
+*Los criterios que guían las decisiones cuando hay múltiples opciones válidas.*
+*Ordenados por prioridad — ante conflicto entre principios, gana el primero.*
 
 1. **Agnóstico al modelo y orquestador** — El framework no puede depender de una herramienta específica. Cualquier agente, con cualquier orquestador, debe poder leer los archivos y operar. Si una decisión de diseño ata el framework a una herramienta concreta, es una decisión incorrecta.
 
@@ -20,18 +21,14 @@ Ordenados por prioridad — ante conflicto entre principios, gana el primero.
 
 ## Lo que nunca hacemos
 
-- No editamos decisiones confirmadas — si cambia la decisión, se crea una nueva que la supera
-- No ponemos lógica de negocio en CONSTITUTION.md — eso va en `knowledge/principios.md`
-- No creamos dependencias de herramientas específicas en `standards/` — eso va en `adapters/`
-- No asumimos versiones de herramientas desde el conocimiento de entrenamiento — siempre verificar en la web
-- No resolvemos ambigüedades silenciosamente — preguntar antes de implementar
+*Antipatrones o decisiones explícitamente descartadas para este proyecto.*
 
-## Criterios de calidad del framework
+- *No hacemos X porque Y*
+- *No hacemos X porque Y*
 
-Una mejora al framework es válida si:
-- Un agente que no conoce el proyecto puede seguirla sin aclaraciones adicionales
-- No rompe la compatibilidad con proyectos que ya usan el framework
-- Mantiene la separación entre standards y adapters
+## Criterios de calidad
+
+*¿Cómo se ve "bien hecho" en este proyecto? ¿Qué estándares mínimos debe cumplir cualquier entrega?*
 
 ## Deuda aceptada
 
