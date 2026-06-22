@@ -1,0 +1,28 @@
+# Entorno
+.env
+.env.local
+.env.*.local
+
+# Dependencias
+node_modules/
+
+# Build
+dist/
+build/
+.next/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
