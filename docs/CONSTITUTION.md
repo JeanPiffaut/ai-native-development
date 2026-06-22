@@ -49,6 +49,7 @@ Al inicio de sesión, el agente DEBE declarar:
 - Editar o eliminar decisiones ya confirmadas en `decisions/`
 - Alterar el historial de decisiones
 - Ignorar una decisión confirmada sin crear una nueva que la supere explícitamente
+- Ejecutar operaciones git de ningún tipo (commit, push, pull, merge, rebase, branch, checkout) — git es operación humana exclusiva
 
 ---
 
