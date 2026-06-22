@@ -1,29 +1,39 @@
 # Principios
 
-- **Última actualización:** YYYY-MM-DD
+- **Última actualización:** 2026-06-22
 
 ---
 
 ## Principios de diseño
 
-*Los criterios que guían las decisiones cuando hay múltiples opciones válidas.*
-*Ordenados por prioridad — ante conflicto entre principios, gana el primero.*
+Ordenados por prioridad — ante conflicto entre principios, gana el primero.
 
-1. **[Principio]** — *Explicación. Ejemplo concreto de cómo aplica.*
-2. **[Principio]** — *Explicación. Ejemplo concreto de cómo aplica.*
-3. **[Principio]** — *Explicación. Ejemplo concreto de cómo aplica.*
+1. **Agnóstico al modelo y orquestador** — El framework no puede depender de una herramienta específica. Cualquier agente, con cualquier orquestador, debe poder leer los archivos y operar. Si una decisión de diseño ata el framework a una herramienta concreta, es una decisión incorrecta.
+
+2. **Archivos sobre memoria** — Todo el contexto relevante vive en archivos, nunca solo en la memoria del modelo. Si algo es importante, está escrito. Si no está escrito, no existe para el agente.
+
+3. **Aditivo, nunca destructivo** — Agregar un estándar, adapter o decisión siempre significa crear un archivo nuevo. Nunca editar uno existente para incorporar algo diferente. Esto aplica especialmente a `decisions/` (append-only) y a `standards/` y `adapters/` (cada concepto tiene su propio archivo).
+
+4. **Trazabilidad del por qué** — No basta con documentar qué se decidió — hay que documentar por qué y qué alternativas se descartaron. Una decisión sin contexto pierde su valor en semanas.
+
+5. **Mínima fricción para el agente** — El protocolo de sesión debe ser ejecutable desde el primer mensaje sin instrucciones adicionales del usuario. El agente lee, declara y trabaja.
 
 ## Lo que nunca hacemos
 
-*Antipatrones o decisiones explícitamente descartadas para este proyecto.*
+- No editamos decisiones confirmadas — si cambia la decisión, se crea una nueva que la supera
+- No ponemos lógica de negocio en CONSTITUTION.md — eso va en `knowledge/principios.md`
+- No creamos dependencias de herramientas específicas en `standards/` — eso va en `adapters/`
+- No asumimos versiones de herramientas desde el conocimiento de entrenamiento — siempre verificar en la web
+- No resolvemos ambigüedades silenciosamente — preguntar antes de implementar
 
-- *No hacemos X porque Y*
-- *No hacemos X porque Y*
+## Criterios de calidad del framework
 
-## Criterios de calidad
-
-*¿Cómo se ve "bien hecho" en este proyecto? ¿Qué estándares mínimos debe cumplir cualquier entrega?*
+Una mejora al framework es válida si:
+- Un agente que no conoce el proyecto puede seguirla sin aclaraciones adicionales
+- No rompe la compatibilidad con proyectos que ya usan el framework
+- Mantiene la separación entre standards y adapters
 
 ## Deuda aceptada
 
-*Trade-offs conscientes que el equipo ha decidido aceptar, y por qué.*
+- **Gestión manual de mejoras** — cuando un proyecto descubre algo que debería estar en la base, el developer lo lleva manualmente al repo del framework. No hay mecanismo automático. Se acepta porque los proyectos son pocos y la frecuencia de cambio del framework base es baja.
+- **Knowledge como punto de entrada humano** — los archivos en `knowledge/` no se llenan automáticamente al clonar. Requieren intervención humana. Se acepta porque el contexto de negocio no puede inferirse.
