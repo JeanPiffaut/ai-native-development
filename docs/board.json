@@ -1,28 +1,5 @@
 {
   "proyecto": "AI-Native Development Framework",
   "actualizado": "2026-06-22",
-  "tareas": [
-    {
-      "id": "0005",
-      "titulo": "Publicar rama template en remoto",
-      "tipo": "proceso",
-      "estado": "pendiente",
-      "prioridad": "alta",
-      "contexto": "La rama template existe localmente con la versión limpia del framework. Hacer push para que esté disponible como punto de partida para nuevos proyectos.",
-      "notas": [],
-      "decision_relacionada": null,
-      "creada": "2026-06-22"
-    },
-    {
-      "id": "0006",
-      "titulo": "Crear variante de template para NestJS",
-      "tipo": "feature",
-      "estado": "pendiente",
-      "prioridad": "media",
-      "contexto": "A partir de la rama template, crear una rama con el framework pre-configurado para proyectos NestJS: adapters activos relevantes, decisión de stack documentada, estructura de src/ base.",
-      "notas": [],
-      "decision_relacionada": null,
-      "creada": "2026-06-22"
-    }
-  ]
+  "tareas": []
 }
