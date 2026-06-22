@@ -1,5 +1,28 @@
 {
-  "proyecto": "AI-Native Development Framework",
-  "actualizado": "2026-06-22",
-  "tareas": []
+  "proyecto": "Nombre del proyecto",
+  "actualizado": "YYYY-MM-DD",
+  "tareas": [
+    {
+      "id": "T-001",
+      "titulo": "Completar knowledge/ con contexto real del proyecto",
+      "tipo": "proceso",
+      "estado": "pendiente",
+      "prioridad": "alta",
+      "contexto": "Los archivos en knowledge/ tienen estructura pero están vacíos. Deben completarse con la información real del negocio antes de que el agente pueda ser útil.",
+      "decision_relacionada": null,
+      "creada": "YYYY-MM-DD",
+      "actualizada": "YYYY-MM-DD"
+    },
+    {
+      "id": "T-002",
+      "titulo": "Definir stack y activar adapters correspondientes",
+      "tipo": "proceso",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "contexto": "Revisar adapters/ disponibles y eliminar los que no apliquen al stack del proyecto. Crear los que falten siguiendo los ejemplos existentes.",
+      "decision_relacionada": null,
+      "creada": "YYYY-MM-DD",
+      "actualizada": "YYYY-MM-DD"
+    }
+  ]
 }
