@@ -42,7 +42,7 @@ El board refleja únicamente el trabajo activo. Las tareas completadas se elimin
 Reglas:
 - Los IDs son numéricos de 4 dígitos con ceros a la izquierda: `0001`, `0002`, `0003`... Únicos y nunca reutilizados, aunque la tarea se haya eliminado
 - Al crear una tarea nueva, tomar `meta.ultimo_id`, incrementar en 1, y actualizar el campo
-- Al completar una tarea: agregar entrada a `meta.historial`, luego eliminar la tarea de `tareas`
+- Al completar una tarea: si tiene `decision_relacionada`, agregar entrada a `meta.historial`; luego eliminar la tarea de `tareas`
 - Git es operación humana — el agente nunca ejecuta git aunque el board lo indique
 - `contexto` es estático — describe por qué existe la tarea y no cambia
 - `notas` es dinámico — array de strings donde el agente y el humano agregan entradas relevantes durante el trabajo (motivo de bloqueo, descubrimientos, cambios de alcance, etc.). Cada entrada es un string independiente.
@@ -83,8 +83,9 @@ La sección `meta` vive al final del JSON, después de `tareas`:
 Las tareas con `tipo: recurrente` representan trabajo periódico que debe repetirse. Incluyen el campo `cadencia` para indicar la frecuencia.
 
 Al completar una tarea recurrente, el agente **debe**:
-1. Crear una nueva instancia de la tarea con `creada` actualizada a la fecha actual
-2. Eliminar la tarea completada del board
+1. Si la tarea tiene `decision_relacionada`, agregar entrada a `meta.historial`
+2. Crear una nueva instancia de la tarea con `creada` actualizada a la fecha actual
+3. Eliminar la tarea completada del board
 
 Si no se re-crea la tarea, el ciclo se rompe y la recurrencia se pierde. La re-creación es responsabilidad del agente que completa la tarea.
 
@@ -153,3 +154,4 @@ Si el orquestador o modelo tiene convenciones propias (ej. archivos de configura
 ## Historial de cambios
 
 - **2026-06-22** — Eliminado resumen del protocolo de inicio; reemplazado por referencia directa a `CONSTITUTION.md §1` para evitar divergencias entre fuentes.
+- **2026-06-22** — Regla de historial refinada: solo las tareas con `decision_relacionada` se registran en `meta.historial` al completarse. Tareas sin decisión vinculada se eliminan directamente. Aplica también a tareas recurrentes (paso agregado).

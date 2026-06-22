@@ -3,7 +3,7 @@
 - **Estado:** CONFIRMADA
 - **Fecha:** 2026-06-22
 - **Supera a:** —
-- **Superada por:** —
+- **Superada por:** 014
 
 ---
 

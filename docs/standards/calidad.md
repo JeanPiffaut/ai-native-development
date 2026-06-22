@@ -12,7 +12,7 @@ Toda tarea completada debe cumplir:
 - [ ] No rompe convenciones ni decisiones documentadas en `decisions/` o `knowledge/`
 - [ ] Sigue las convenciones de `standards/convenciones.md`
 - [ ] Si se tomó una decisión relevante durante el trabajo, está registrada en `decisions/`
-- [ ] La tarea fue registrada en `meta.historial` y eliminada de `tareas` en `board.json`
+- [ ] La tarea fue eliminada de `tareas` en `board.json`; si tenía `decision_relacionada`, registrada en `meta.historial`
 
 ## Criterios de aceptación
 

@@ -78,10 +78,9 @@ Si una decisión cambia, se crea una nueva que referencia la anterior con `super
 `board.json` es el estado vivo del trabajo. El agente debe:
 
 - Consultar `board.json` al inicio de cada sesión para entender el contexto
-- Actualizar el estado de las tareas trabajadas al finalizar la sesión
 - Proponer nuevas tareas al board cuando las descubra durante el trabajo
-- Al completar una tarea: agregar entrada a `meta.historial`, luego eliminar la tarea de `tareas`
-- Las tareas completadas no tienen estado — se eliminan del board; su registro queda en `meta.historial`
+- Al completar una tarea: si tiene `decision_relacionada`, registrarla en `meta.historial`; luego eliminar de `tareas`
+- Las tareas completadas no tienen estado — se eliminan; solo las vinculadas a una decisión quedan en `meta.historial`
 
 ---
 
@@ -98,7 +97,7 @@ Si una decisión cambia, se crea una nueva que referencia la anterior con `super
 ## 6. Cierre de sesión
 
 Al finalizar una sesión, el agente DEBE:
-1. Actualizar `board.json` con el estado real de las tareas trabajadas
+1. Actualizar `board.json`: tareas completadas → eliminar de `tareas` (y registrar en `meta.historial` si tienen `decision_relacionada`); tareas en progreso → actualizar `estado` si cambió
 2. Si se tomaron decisiones relevantes, confirmar que están registradas en `decisions/`
 3. Listar brevemente qué se hizo y qué quedó pendiente
 

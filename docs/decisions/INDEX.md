@@ -9,9 +9,9 @@ Actualizar al confirmar cada nueva decisión: agregar a la sección temática co
 
 Las últimas decisiones confirmadas — para contexto de cambios recientes:
 
-- **[013]** [meta en board.json para historial y continuidad de IDs](013-meta-en-board-para-historial-y-continuidad-de-ids.md) — sección `meta` al final del board con `ultimo_id` y `historial` mínimo de tareas completadas — 2026-06-22
+- **[014]** [historial del board limitado a tareas con decisión vinculada](014-historial-solo-tareas-con-decision-vinculada.md) — `meta.historial` solo registra tareas completadas con `decision_relacionada`; las demás se eliminan directamente — 2026-06-22
+- **[013]** [meta en board.json para historial y continuidad de IDs](013-meta-en-board-para-historial-y-continuidad-de-ids.md) *(superada por [014] en la regla de cuándo registrar en historial)* — sección `meta` al final del board con `ultimo_id` y `historial` — 2026-06-22
 - **[012]** [tipo recurrente en board.json](012-tipo-recurrente-en-board.md) — se agrega `recurrente` como tipo de tarea con campo `cadencia`; al completarse, el agente la re-crea para el próximo ciclo — 2026-06-22
-- **[011]** [decisions/INDEX.md como mecanismo de descubribilidad](011-index-de-decisiones-para-descubribilidad.md) — el protocolo de inicio lee este INDEX en lugar de las últimas 3 entradas individuales — 2026-06-22
 
 ---
 
@@ -41,4 +41,5 @@ Las últimas decisiones confirmadas — para contexto de cambios recientes:
 
 - **[011]** [decisions/INDEX.md como mecanismo de descubribilidad](011-index-de-decisiones-para-descubribilidad.md) — índice temático que el protocolo de inicio lee en lugar de las últimas 3 entradas
 - **[012]** [tipo recurrente en board.json](012-tipo-recurrente-en-board.md) — tipo de tarea para trabajo periódico; incluye campo `cadencia` y protocolo de re-creación al completarse
-- **[013]** [meta en board.json para historial y continuidad de IDs](013-meta-en-board-para-historial-y-continuidad-de-ids.md) — sección `meta` al final del board con `ultimo_id` y `historial` mínimo append-only de tareas completadas
+- **[013]** [meta en board.json para historial y continuidad de IDs](013-meta-en-board-para-historial-y-continuidad-de-ids.md) *(superada por [014])* — sección `meta` con `ultimo_id` y `historial`
+- **[014]** [historial del board limitado a tareas con decisión vinculada](014-historial-solo-tareas-con-decision-vinculada.md) — refina [013]: solo se registra en `meta.historial` si la tarea tiene `decision_relacionada`
