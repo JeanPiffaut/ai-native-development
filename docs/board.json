@@ -1,61 +1,28 @@
 {
-  "proyecto": "AI-Native Development Framework",
-  "actualizado": "2026-06-22",
+  "proyecto": "Nombre del proyecto",
+  "actualizado": "YYYY-MM-DD",
   "tareas": [
     {
       "id": "T-001",
-      "titulo": "Construir estructura base del framework",
+      "titulo": "Completar knowledge/ con contexto real del proyecto",
       "tipo": "proceso",
-      "estado": "completada",
+      "estado": "pendiente",
       "prioridad": "alta",
-      "contexto": "Diseño y construcción de CONSTITUTION.md, knowledge/, decisions/, standards/, adapters/, templates/ y CLAUDE.md.",
-      "decision_relacionada": "001",
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
+      "contexto": "Los archivos en knowledge/ tienen estructura pero están vacíos. Deben completarse con la información real del negocio antes de que el agente pueda ser útil.",
+      "decision_relacionada": null,
+      "creada": "YYYY-MM-DD",
+      "actualizada": "YYYY-MM-DD"
     },
     {
       "id": "T-002",
-      "titulo": "Completar knowledge/ del framework",
+      "titulo": "Definir stack y activar adapters correspondientes",
       "tipo": "proceso",
-      "estado": "completada",
-      "prioridad": "alta",
-      "contexto": "Llenar los cuatro archivos de knowledge/ con el contexto real del framework: negocio, dominio, principios y stakeholders.",
-      "decision_relacionada": null,
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
-    },
-    {
-      "id": "T-003",
-      "titulo": "Registrar decisiones de diseño de la sesión inicial",
-      "tipo": "proceso",
-      "estado": "completada",
-      "prioridad": "alta",
-      "contexto": "Decisiones tomadas durante el diseño del framework que no quedaron registradas en el momento: estructura docs/, separación standards/adapters, ENVIRONMENT, sincronización manual, sin templates para board/adapters.",
-      "decision_relacionada": null,
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
-    },
-    {
-      "id": "T-004",
-      "titulo": "Crear tag de versión limpia del framework",
-      "tipo": "proceso",
-      "estado": "pendiente",
-      "prioridad": "alta",
-      "contexto": "Crear un tag git (v1.0.0 o similar) que marque el estado actual como template base limpio, antes de que este repo evolucione como proyecto propio.",
-      "decision_relacionada": null,
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
-    },
-    {
-      "id": "T-005",
-      "titulo": "Crear variante de template para NestJS",
-      "tipo": "feature",
       "estado": "pendiente",
       "prioridad": "media",
-      "contexto": "A partir del tag limpio, crear una rama o repo con el framework pre-configurado para proyectos NestJS: adapters activos, decisiones iniciales de stack, estructura de src/ base.",
+      "contexto": "Revisar adapters/ disponibles y eliminar los que no apliquen al stack del proyecto. Crear los que falten siguiendo los ejemplos existentes.",
       "decision_relacionada": null,
-      "creada": "2026-06-22",
-      "actualizada": "2026-06-22"
+      "creada": "YYYY-MM-DD",
+      "actualizada": "YYYY-MM-DD"
     }
   ]
 }
