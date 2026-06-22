@@ -1,5 +1,5 @@
 {
-  "proyecto": "AI-Native Development Framework",
+  "proyecto": "nombre-del-proyecto",
   "actualizado": "YYYY-MM-DD",
   "tareas": [
     {
@@ -11,7 +11,7 @@
       "contexto": "Los archivos en knowledge/ tienen estructura pero están vacíos. Deben completarse con la información real del negocio antes de que el agente pueda ser útil.",
       "notas": [],
       "decision_relacionada": null,
-      "creada": "YYYY-MM-DD",
+      "creada": "YYYY-MM-DD"
     },
     {
       "id": "0002",
@@ -22,7 +22,7 @@
       "contexto": "Revisar adapters/ disponibles y eliminar los que no apliquen al stack del proyecto. Crear los que falten siguiendo los ejemplos existentes.",
       "notas": [],
       "decision_relacionada": null,
-      "creada": "YYYY-MM-DD",
+      "creada": "YYYY-MM-DD"
     },
     {
       "id": "0003",
@@ -34,11 +34,11 @@
       "contexto": "Los adapters documentan versiones de herramientas (NestJS, TypeScript, Docker, etc.) que quedan obsoletas con el tiempo. Un agente siguiendo un adapter desactualizado puede instalar versiones viejas. Revisión trimestral garantiza que las versiones documentadas sigan siendo las estables actuales.",
       "notas": [],
       "decision_relacionada": null,
-      "creada": "YYYY-MM-DD",
+      "creada": "YYYY-MM-DD"
     }
   ],
   "meta": {
-    "ultimo_id": "0001",
+    "ultimo_id": "0003",
     "historial": []
   }
 }
