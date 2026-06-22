@@ -26,6 +26,9 @@ Leer este adapter antes de cualquier tarea que agregue, modifique o consuma vari
 |---|---|---|---|---|
 | `ENVIRONMENT` | Entorno de ejecución del proyecto | `development` | Sí | todos |
 | `PORT` | Puerto interno del contenedor o proceso | `3000` | Sí | todos |
+| `SONAR_HOST_URL` | URL del servidor SonarQube | `https://sonar.miempresa.com` | Solo para análisis | local / CI |
+| `SONAR_TOKEN` | Token de autenticación de SonarQube | — | Solo para análisis | local / CI |
+| `SONAR_PROJECT_KEY` | Clave del proyecto en SonarQube | `mi-proyecto` | Solo para análisis | local / CI |
 
 *Esta tabla crece con el proyecto. Agregar una fila por cada variable nueva.*
 

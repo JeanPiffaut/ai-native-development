@@ -16,6 +16,9 @@ out/
 *.log
 npm-debug.log*
 
+# Reportes temporales de análisis
+.tmp/
+
 # Sistema
 .DS_Store
 Thumbs.db
