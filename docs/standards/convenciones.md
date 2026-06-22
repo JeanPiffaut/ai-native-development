@@ -43,7 +43,7 @@ Todo archivo en `knowledge/` debe comenzar con:
 
 ## Estructura de board.json
 
-Ver esquema definido en el propio `board.json`.
+Ver esquema completo en `standards/agentes.md` (sección "Cómo actualizar el board").
 Los campos `id`, `titulo`, `estado` y `tipo` son obligatorios en toda tarea.
 
 ## Versionado de standards
@@ -51,3 +51,9 @@ Los campos `id`, `titulo`, `estado` y `tipo` son obligatorios en toda tarea.
 Cuando un archivo en `standards/` cambia de forma significativa:
 - Registrar la razón del cambio al final del archivo bajo `## Historial de cambios`
 - Si el cambio implica una decisión de diseño, crear ADR correspondiente
+
+---
+
+## Historial de cambios
+
+- **2026-06-22** — Referencia de schema de board.json corregida: de `board.json` a `standards/agentes.md`.

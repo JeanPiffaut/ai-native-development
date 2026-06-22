@@ -16,18 +16,9 @@ Los agentes que trabajen en este proyecto deben operar bajo estos principios:
 
 ---
 
-## Protocolo de inicio (resumen ejecutivo)
+## Protocolo de inicio
 
-El protocolo completo está en `CONSTITUTION.md §1`. Resumen:
-
-```
-1. Leer CONSTITUTION.md
-2. Leer knowledge/ (negocio, dominio, principios)
-3. Leer board.json
-4. Leer decisions/INDEX.md (índice temático; incluye sección de recientes)
-5. Leer adapter relevante si aplica
-6. Declarar: qué leí, estado del proyecto, tarea a abordar
-```
+Ver `CONSTITUTION.md §1` — es la única fuente de verdad para el orden de lectura al iniciar sesión. No se duplica aquí para evitar divergencias.
 
 ---
 
@@ -156,3 +147,9 @@ Este framework es agnóstico. Los archivos son Markdown plano y JSON.
 No hay dependencias de herramientas específicas.
 
 Si el orquestador o modelo tiene convenciones propias (ej. archivos de configuración específicos como `.claude/`, `.cursor/`), pueden coexistir con este framework sin modificar su estructura.
+
+---
+
+## Historial de cambios
+
+- **2026-06-22** — Eliminado resumen del protocolo de inicio; reemplazado por referencia directa a `CONSTITUTION.md §1` para evitar divergencias entre fuentes.

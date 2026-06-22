@@ -80,7 +80,8 @@ Si una decisión cambia, se crea una nueva que referencia la anterior con `super
 - Consultar `board.json` al inicio de cada sesión para entender el contexto
 - Actualizar el estado de las tareas trabajadas al finalizar la sesión
 - Proponer nuevas tareas al board cuando las descubra durante el trabajo
-- No eliminar tareas completadas — cambiar su estado a `completada`
+- Al completar una tarea: agregar entrada a `meta.historial`, luego eliminar la tarea de `tareas`
+- Las tareas completadas no tienen estado — se eliminan del board; su registro queda en `meta.historial`
 
 ---
 
@@ -119,7 +120,7 @@ Cuando debas decidir dónde vive un archivo nuevo, aplicar esta distinción:
 Si la convención aplica igual en un proyecto React que en uno de NestJS que en uno sin código → va en `standards/`.
 Si la convención solo tiene sentido cuando usas una tecnología concreta → va en `adapters/`.
 
-Ambos directorios son aditivos: agregar un nuevo estándar o adapter es crear un archivo nuevo, nunca editar los existentes.
+Ambos directorios crecen por acreción: la forma preferida de incorporar algo nuevo es crear un archivo nuevo. Cuando sea necesario editar un archivo existente en `standards/`, registrar el cambio al final bajo `## Historial de cambios` (ver `standards/convenciones.md`). Los adapters pueden modificarse libremente sin aprobación (ver §2).
 
 ---
 
