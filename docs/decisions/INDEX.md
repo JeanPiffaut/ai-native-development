@@ -9,9 +9,9 @@ Actualizar al confirmar cada nueva decisión: agregar a la sección temática co
 
 Las últimas decisiones confirmadas — para contexto de cambios recientes:
 
+- **[015]** [editar standards/ y adapters/ es válido para correcciones](015-editar-standards-y-adapters-es-valido-para-correcciones.md) — corregir o evolucionar un concepto existente en su archivo es válido; crear archivo nuevo solo para conceptos distintos; `decisions/` mantiene la regla absoluta — 2026-06-22
 - **[014]** [historial del board limitado a tareas con decisión vinculada](014-historial-solo-tareas-con-decision-vinculada.md) — `meta.historial` solo registra tareas completadas con `decision_relacionada`; las demás se eliminan directamente — 2026-06-22
 - **[013]** [meta en board.json para historial y continuidad de IDs](013-meta-en-board-para-historial-y-continuidad-de-ids.md) *(superada por [014] en la regla de cuándo registrar en historial)* — sección `meta` al final del board con `ultimo_id` y `historial` — 2026-06-22
-- **[012]** [tipo recurrente en board.json](012-tipo-recurrente-en-board.md) — se agrega `recurrente` como tipo de tarea con campo `cadencia`; al completarse, el agente la re-crea para el próximo ciclo — 2026-06-22
 
 ---
 
@@ -19,7 +19,8 @@ Las últimas decisiones confirmadas — para contexto de cambios recientes:
 
 - **[001]** [Adopción del framework AI-native](001-adopcion-framework-ai-native.md) — se adopta estructura de carpetas en el repositorio (CONSTITUTION, knowledge, decisions, standards, adapters) como base para cualquier proyecto con agentes de IA
 - **[002]** [Estructura de docs/ en raíz](002-estructura-docs-en-raiz.md) — toda la documentación del framework vive en `docs/` dentro del repositorio, junto al código
-- **[003]** [Separación standards vs adapters](003-separacion-standards-adapters.md) — standards aplican independientemente de la tecnología; adapters solo cuando el proyecto usa esa herramienta concreta
+- **[003]** [Separación standards vs adapters](003-separacion-standards-adapters.md) — standards aplican independientemente de la tecnología; adapters solo cuando el proyecto usa esa herramienta concreta *(superada por [015] en la regla de edición de archivos existentes)*
+- **[015]** [editar standards/ y adapters/ es válido para correcciones](015-editar-standards-y-adapters-es-valido-para-correcciones.md) — refina [003]: editar es válido para corrección o evolución del mismo concepto; crear archivo nuevo solo para conceptos distintos
 
 ## Flujo de trabajo y proceso
 

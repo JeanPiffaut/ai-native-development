@@ -114,6 +114,7 @@ Cuando debas decidir dónde vive un archivo nuevo, aplicar esta distinción:
 | `standards/` | Principios y metodologías de trabajo | Aplica **independientemente** de la tecnología o herramienta usada |
 | `adapters/` | Convenciones de una herramienta o tecnología específica | Solo aplica si el proyecto **usa esa herramienta**; otro proyecto podría no usarla |
 | `templates/` | Plantillas reutilizables | Es un molde que se reutiliza para crear otros documentos |
+| `templates/` | Plantillas reutilizables | Es un molde que se reutiliza para crear otros documentos |
 
 **Regla de distinción clave — standards vs adapters:**
 Si la convención aplica igual en un proyecto React que en uno de NestJS que en uno sin código → va en `standards/`.

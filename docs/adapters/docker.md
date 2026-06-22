@@ -21,7 +21,7 @@ proyecto/
 ├── docker-compose.yml        ← entorno de desarrollo local
 ├── docker-compose.prod.yml   ← overrides para producción (si aplica)
 ├── Dockerfile                ← imagen de la aplicación principal
-└── .env                      ← variables que docker-compose consume
+└── .env.example              ← variables documentadas (nunca commitear .env con valores reales)
 ```
 
 ---
