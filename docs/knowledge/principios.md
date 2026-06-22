@@ -12,7 +12,7 @@ Ordenados por prioridad — ante conflicto entre principios, gana el primero.
 
 2. **Archivos sobre memoria** — Todo el contexto relevante vive en archivos, nunca solo en la memoria del modelo. Si algo es importante, está escrito. Si no está escrito, no existe para el agente.
 
-3. **Aditivo, nunca destructivo** — Agregar un estándar, adapter o decisión siempre significa crear un archivo nuevo. Nunca editar uno existente para incorporar algo diferente. Esto aplica especialmente a `decisions/` (append-only) y a `standards/` y `adapters/` (cada concepto tiene su propio archivo).
+3. **Aditivo, nunca destructivo** — La forma preferida de incorporar algo nuevo es siempre crear un archivo nuevo. Para `decisions/` esto es absoluto: nunca se editan, solo se agregan nuevas que superan a las anteriores. Para `standards/` y `adapters/`, editar un archivo existente es válido cuando el cambio es una corrección o evolución del mismo concepto — no para incorporar un concepto distinto; en ese caso, crear un archivo nuevo.
 
 4. **Trazabilidad del por qué** — No basta con documentar qué se decidió — hay que documentar por qué y qué alternativas se descartaron. Una decisión sin contexto pierde su valor en semanas.
 
@@ -37,3 +37,9 @@ Una mejora al framework es válida si:
 
 - **Gestión manual de mejoras** — cuando un proyecto descubre algo que debería estar en la base, el developer lo lleva manualmente al repo del framework. No hay mecanismo automático. Se acepta porque los proyectos son pocos y la frecuencia de cambio del framework base es baja.
 - **Knowledge como punto de entrada humano** — los archivos en `knowledge/` no se llenan automáticamente al clonar. Requieren intervención humana. Se acepta porque el contexto de negocio no puede inferirse.
+
+---
+
+## Historial de cambios
+
+- **2026-06-22** — Principio 3 ("Aditivo, nunca destructivo") aclarado: la restricción absoluta de no editar aplica solo a `decisions/`; para `standards/` y `adapters/` editar es válido cuando el cambio es corrección o evolución del mismo concepto.

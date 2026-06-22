@@ -25,7 +25,7 @@ La CONSTITUTION no es un prompt ni un conjunto de sugerencias — es un contrato
 El contexto del agente vive en archivos, no en la memoria del modelo. Esto significa que persiste entre sesiones, sobrevive cambios de modelo, es auditable y se acumula con el tiempo. La diferencia entre un agente con archivos y uno sin ellos es la diferencia entre alguien que toma notas y alguien que no.
 
 ### Standards vs Adapters
-Los standards definen *cómo trabajamos* independientemente del stack — aplican en cualquier proyecto. Los adapters definen *cómo usamos una herramienta específica* — solo aplican si el proyecto usa esa herramienta. Ambos son aditivos: se agrega un archivo nuevo, nunca se editan los existentes para incorporar algo nuevo.
+Los standards definen *cómo trabajamos* independientemente del stack — aplican en cualquier proyecto. Los adapters definen *cómo usamos una herramienta específica* — solo aplican si el proyecto usa esa herramienta. Ambos crecen preferentemente por acreción: incorporar algo nuevo significa crear un archivo nuevo. Editar un archivo existente es válido cuando el cambio es una corrección o evolución del mismo concepto — nunca para incorporar un concepto distinto en el mismo archivo.
 
 ### Decisions como historial append-only
 Las decisiones nunca se editan. Si una decisión cambia, se crea una nueva que la supera. Esto garantiza que el historial de *por qué* se tomó cada decisión sea siempre legible y nunca se pierda contexto.
@@ -48,3 +48,9 @@ board.json ←── estado vivo del trabajo                   │
 - Todo lo que esté en `adapters/` solo aplica si el proyecto usa esa herramienta
 - El agente no puede confirmar una decisión sin aprobación humana
 - `CONSTITUTION.md` tiene precedencia sobre cualquier otro archivo del proyecto
+
+---
+
+## Historial de cambios
+
+- **2026-06-22** — Sección "Standards vs Adapters" aclarada: "crecen por acreción" en lugar de "nunca se editan", para alinear con el protocolo de historial de cambios de `standards/convenciones.md`.
