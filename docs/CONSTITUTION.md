@@ -14,7 +14,7 @@ Al comenzar cualquier sesión, el agente DEBE leer en este orden:
 3. `knowledge/dominio.md`
 4. `knowledge/principios.md`
 5. `board.json` — para entender el estado actual del trabajo
-6. Las últimas 3 entradas en `decisions/` — para entender decisiones recientes
+6. `decisions/INDEX.md` — índice temático de todas las decisiones; incluye sección "Recientes" con las últimas confirmadas
 7. Todos los archivos en `standards/` — cada archivo es un estándar independiente; leerlos todos
 8. El adapter relevante en `adapters/` según la tarea a realizar
 
@@ -78,9 +78,9 @@ Si una decisión cambia, se crea una nueva que referencia la anterior con `super
 `board.json` es el estado vivo del trabajo. El agente debe:
 
 - Consultar `board.json` al inicio de cada sesión para entender el contexto
-- Actualizar el estado de las tareas trabajadas al finalizar la sesión
 - Proponer nuevas tareas al board cuando las descubra durante el trabajo
-- No eliminar tareas completadas — cambiar su estado a `completada`
+- Al completar una tarea: si tiene `decision_relacionada`, registrarla en `meta.historial`; luego eliminar de `tareas`
+- Las tareas completadas no tienen estado — se eliminan; solo las vinculadas a una decisión quedan en `meta.historial`
 
 ---
 
@@ -97,7 +97,7 @@ Si una decisión cambia, se crea una nueva que referencia la anterior con `super
 ## 6. Cierre de sesión
 
 Al finalizar una sesión, el agente DEBE:
-1. Actualizar `board.json` con el estado real de las tareas trabajadas
+1. Actualizar `board.json`: tareas completadas → eliminar de `tareas` (y registrar en `meta.historial` si tienen `decision_relacionada`); tareas en progreso → actualizar `estado` si cambió
 2. Si se tomaron decisiones relevantes, confirmar que están registradas en `decisions/`
 3. Listar brevemente qué se hizo y qué quedó pendiente
 
@@ -114,12 +114,13 @@ Cuando debas decidir dónde vive un archivo nuevo, aplicar esta distinción:
 | `standards/` | Principios y metodologías de trabajo | Aplica **independientemente** de la tecnología o herramienta usada |
 | `adapters/` | Convenciones de una herramienta o tecnología específica | Solo aplica si el proyecto **usa esa herramienta**; otro proyecto podría no usarla |
 | `templates/` | Plantillas reutilizables | Es un molde que se reutiliza para crear otros documentos |
+| `templates/` | Plantillas reutilizables | Es un molde que se reutiliza para crear otros documentos |
 
 **Regla de distinción clave — standards vs adapters:**
 Si la convención aplica igual en un proyecto React que en uno de NestJS que en uno sin código → va en `standards/`.
 Si la convención solo tiene sentido cuando usas una tecnología concreta → va en `adapters/`.
 
-Ambos directorios son aditivos: agregar un nuevo estándar o adapter es crear un archivo nuevo, nunca editar los existentes.
+Ambos directorios crecen por acreción: la forma preferida de incorporar algo nuevo es crear un archivo nuevo. Cuando sea necesario editar un archivo existente en `standards/`, registrar el cambio al final bajo `## Historial de cambios` (ver `standards/convenciones.md`). Los adapters pueden modificarse libremente sin aprobación (ver §2).
 
 ---
 

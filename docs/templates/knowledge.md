@@ -1,7 +1,6 @@
 # [Nombre del documento de conocimiento]
 
 - **Última actualización:** YYYY-MM-DD
-- **Actualizado por:** *humano | agente (requiere aprobación)*
 
 ---
 

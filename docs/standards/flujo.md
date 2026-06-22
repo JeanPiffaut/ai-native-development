@@ -23,7 +23,7 @@
 ### 3. Implementar
 - Seguir convenciones definidas en `standards/convenciones.md`
 - Seguir el adapter correspondiente si aplica (`adapters/`)
-- Actualizar `board.json` a estado `en-progreso`
+- Actualizar `board.json` a estado `haciendo`
 
 ### 4. Validar
 - Verificar criterios de aceptación definidos en el paso 1
@@ -31,7 +31,8 @@
 - Ver `standards/calidad.md` para criterios mínimos
 
 ### 5. Registrar
-- Actualizar `board.json` a estado `completada`
+- Si la tarea tiene `decision_relacionada`, registrarla en `meta.historial` de `board.json`
+- Eliminar la tarea de `board.json` (las tareas completadas no tienen estado — se eliminan)
 - Si se tomaron decisiones relevantes, confirmarlas en `decisions/`
 - Si se descubrió algo que cambia `knowledge/`, proponer actualización al humano
 
@@ -71,3 +72,10 @@ Si durante el trabajo se detecta un problema no relacionado con la tarea actual:
 3. Mencionarlo al usuario al final de la sesión
 
 No interrumpir el flujo de trabajo para resolver problemas colaterales salvo que sean bloqueantes.
+
+---
+
+## Historial de cambios
+
+- **2026-06-22** — Corregidos estados del board en pasos 3 y 5: `en-progreso` → `haciendo`; `estado completada` → eliminar tarea del JSON. Alineado con el schema definido en `standards/agentes.md`.
+- **2026-06-22** — Paso 5 "Registrar": agregado el paso condicional de registrar en `meta.historial` antes de eliminar la tarea, alineado con [014].

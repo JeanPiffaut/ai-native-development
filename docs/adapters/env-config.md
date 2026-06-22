@@ -15,7 +15,7 @@ Leer este adapter antes de cualquier tarea que agregue, modifique o consuma vari
 
 - Ningún valor de configuración vive hardcodeado en el código — siempre a través de variables de entorno
 - Toda variable nueva se documenta aquí en el mismo commit o sesión en que se agrega al código
-- El archivo `.env.example` en la raíz del proyecto refleja exactamente las variables de esta tabla — son la misma fuente de verdad
+- `env-config.md` es la fuente de verdad documental; `.env.example` es su materialización operacional — deben estar sincronizados
 - Nunca commitear `.env` con valores reales — solo `.env.example` con valores de ejemplo o vacíos
 
 ---
