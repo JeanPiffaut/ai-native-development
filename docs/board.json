@@ -1,6 +1,6 @@
 {
   "proyecto": "AI-Native Development Framework",
-  "actualizado": "2026-06-22",
+  "actualizado": "2026-07-29",
   "tareas": [
     {
       "id": "0001",
@@ -13,10 +13,21 @@
       "notas": [],
       "decision_relacionada": "012",
       "creada": "2026-06-22"
+    },
+    {
+      "id": "0002",
+      "titulo": "Crear prompt de inicialización para bootstrap desde chat externo",
+      "tipo": "feature",
+      "estado": "haciendo",
+      "prioridad": "media",
+      "contexto": "El usuario valida ideas de proyectos nuevos en chats con otros agentes antes de traerlos a este framework. Se necesita un prompt reutilizable en templates/ que extraiga esa información y la estructure en knowledge/ y, cuando corresponda, como decisiones borrador en decisions/.",
+      "notas": [],
+      "decision_relacionada": "016",
+      "creada": "2026-07-29"
     }
   ],
   "meta": {
-    "ultimo_id": "0001",
+    "ultimo_id": "0002",
     "historial": []
   }
 }
