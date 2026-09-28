@@ -1,6 +1,6 @@
 # [018] Flujo de inicialización que adapta el framework a cada proyecto, sea o no de software
 
-- **Estado:** BORRADOR
+- **Estado:** CONFIRMADA
 - **Fecha:** 2026-09-28
 - **Supera a:** —
 - **Superada por:** —
