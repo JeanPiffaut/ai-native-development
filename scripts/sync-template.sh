@@ -52,7 +52,8 @@ for path in "${BASE_PATHS[@]}"; do
   git checkout "$SOURCE_BRANCH" -- "$path"
 done
 
-git rm -r -q --ignore-unmatch -- "${EXCLUDED_PATHS[@]}"
+# -f: los excluidos quedan en staging tras copiar su carpeta desde main
+git rm -r -q -f --ignore-unmatch -- "${EXCLUDED_PATHS[@]}"
 
 cat > docs/board.json <<'EOF'
 {
