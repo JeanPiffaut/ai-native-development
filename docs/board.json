@@ -24,11 +24,51 @@
       "notas": [],
       "decision_relacionada": "016",
       "creada": "2026-07-29"
+    },
+    {
+      "id": "0004",
+      "titulo": "Clonar repos externos e inicializarlos con el framework",
+      "tipo": "proceso",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "contexto": "Hay repos existentes que se necesitan clonar a local e inicializar con este framework (docs/, CLAUDE.md, board inicial) para trabajarlos con agentes bajo el mismo protocolo.",
+      "notas": [
+        "Restaurada en el board: se perdió al resolver el conflicto de board.json en el merge de la 0005.",
+        "Repos: https://gitlab-scm.cencosud.net/cencosud/seguridad-informatica/regional/access-analyzer/ai-hub-fidelidad y https://gitlab-scm.cencosud.net/cencosud/tecnologia-y-operaciones/regional/ai-hub/projects/source/fidelidad-ai-agent",
+        "Inicializar = copiar el contenido de la rama template a la raíz del repo; el flujo de standards/inicializacion.md se ejecuta después, abriendo el repo en VS Code.",
+        "Depende de la 0006: template debe estar sincronizada antes de copiarla."
+      ],
+      "decision_relacionada": null,
+      "creada": "2026-09-28"
+    },
+    {
+      "id": "0006",
+      "titulo": "Script para sincronizar la rama template con main",
+      "tipo": "proceso",
+      "estado": "haciendo",
+      "prioridad": "alta",
+      "contexto": "template quedó atrasada respecto a main (sin prompt de inicialización, sin INDEX.md, con reglas de git viejas). No se puede mergear main a template porque arrastra el contexto de este proyecto; se necesita una forma repetible de copiar solo la parte genérica.",
+      "notas": [
+        "Criterios de aceptación: scripts/sync-template.sh copia los archivos genéricos de main, regenera board.json (inicializado false) e INDEX.md limpios, no incluye el propio script y deja todo sin commitear en una rama creada desde template; decisión 019 confirmada."
+      ],
+      "decision_relacionada": "019",
+      "creada": "2026-09-28"
+    },
+    {
+      "id": "0007",
+      "titulo": "Corregir typo ENVIROMENT en .env.example",
+      "tipo": "deuda",
+      "estado": "pendiente",
+      "prioridad": "baja",
+      "contexto": ".env.example declara ENVIROMENT en lugar de ENVIRONMENT, la variable definida en la decisión 004. Un proyecto que copie la base heredaría el nombre incorrecto.",
+      "notas": [],
+      "decision_relacionada": null,
+      "creada": "2026-09-28"
     }
   ],
   "meta": {
     "inicializado": true,
-    "ultimo_id": "0005",
+    "ultimo_id": "0007",
     "historial": [
       {
         "id": "0003",
