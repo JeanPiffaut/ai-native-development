@@ -1,6 +1,6 @@
 # [017] Cada tarea del board se trabaja en su propia rama git; el agente puede actualizar main y crear ramas
 
-- **Estado:** BORRADOR
+- **Estado:** CONFIRMADA
 - **Fecha:** 2026-09-28
 - **Supera a:** 010 *(parcialmente — solo en las operaciones git listadas abajo)*
 - **Superada por:** —

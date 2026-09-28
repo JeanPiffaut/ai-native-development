@@ -9,9 +9,9 @@ Actualizar al confirmar cada nueva decisión: agregar a la sección temática co
 
 Las últimas decisiones confirmadas — para contexto de cambios recientes:
 
+- **[017]** [rama git por tarea](017-rama-git-por-tarea.md) — cada tarea del board se trabaja en su rama `<tipo>/<id>-<slug>`; el agente puede actualizar `main` y crear/cambiar de rama; commit, push y merge siguen siendo humanos — 2026-09-28
 - **[015]** [editar standards/ y adapters/ es válido para correcciones](015-editar-standards-y-adapters-es-valido-para-correcciones.md) — corregir o evolucionar un concepto existente en su archivo es válido; crear archivo nuevo solo para conceptos distintos; `decisions/` mantiene la regla absoluta — 2026-06-22
 - **[014]** [historial del board limitado a tareas con decisión vinculada](014-historial-solo-tareas-con-decision-vinculada.md) — `meta.historial` solo registra tareas completadas con `decision_relacionada`; las demás se eliminan directamente — 2026-06-22
-- **[013]** [meta en board.json para historial y continuidad de IDs](013-meta-en-board-para-historial-y-continuidad-de-ids.md) *(superada por [014] en la regla de cuándo registrar en historial)* — sección `meta` al final del board con `ultimo_id` y `historial` — 2026-06-22
 
 ---
 
@@ -27,7 +27,8 @@ Las últimas decisiones confirmadas — para contexto de cambios recientes:
 - **[005]** [Sincronización manual del framework](005-sincronizacion-manual-del-framework.md) — los proyectos derivados no se sincronizan automáticamente; las mejoras se llevan manualmente al repo base
 - **[006]** [Sin templates para board y adapters](006-sin-templates-para-board-y-adapters.md) — board.json y los adapters no tienen templates en `templates/`; su estructura está definida en los standards
 - **[009]** [Tareas desde SonarQube son manuales](009-tareas-desde-sonarqube-son-manuales.md) — el developer decide qué issues de SonarQube merecen ser tareas; no hay script automático de volcado al board
-- **[010]** [Git es operación humana exclusiva](010-git-es-operacion-humana.md) — los agentes nunca ejecutan comandos git
+- **[010]** [Git es operación humana exclusiva](010-git-es-operacion-humana.md) — los agentes nunca ejecutan comandos git *(superada parcialmente por [017])*
+- **[017]** [rama git por tarea](017-rama-git-por-tarea.md) — refina [010]: una tarea = una rama; el agente actualiza `main` y crea/cambia de rama; commit, push y merge son humanos
 
 ## Estructura de archivos y herramientas
 
