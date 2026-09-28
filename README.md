@@ -23,28 +23,22 @@ Una plantilla de proyecto diseñada para que cualquier agente de IA pueda:
 
 ## Cómo usar esta plantilla
 
-### 1. Clonar
-```bash
-git clone <este-repo> mi-proyecto
-cd mi-proyecto
-```
+La rama `template` es la base limpia; `main` es donde se trabaja el framework en sí.
 
-### 2. Completar el contexto
-Editar los archivos en `docs/knowledge/` con la información real del proyecto:
-- `negocio.md` — qué es, para quién, qué problema resuelve
-- `dominio.md` — glosario y conceptos clave
-- `stakeholders.md` — quiénes participan
-- `principios.md` — valores y criterios de decisión
+### 1. Llevar la base al proyecto
+Copiar el contenido de la rama `template` (`CLAUDE.md`, `docs/`, `scripts/`, `.gitignore`, `.env.example`) a la raíz del proyecto, nuevo o existente. Si el proyecto ya tiene `.gitignore` o `README.md`, combinarlos en lugar de sobrescribirlos.
 
-### 3. Agregar el proyecto
-El código, contenido o entregables del proyecto viven en `src/`.
+### 2. (Opcional) Traer la idea validada
+Si la idea se discutió en otra app de IA, usar `docs/templates/prompt-inicializacion.md` al cierre de esa conversación y guardar el resumen resultante.
 
-### 4. Agregar adapters si aplica
-Si el proyecto usa herramientas o tecnologías específicas, crear el adapter correspondiente en `docs/adapters/` siguiendo los ejemplos existentes.
+### 3. Abrir una sesión con el agente
+El board de la base trae `meta.inicializado: false`, así que el agente arranca el flujo de inicialización (`docs/standards/inicializacion.md`) sin instrucciones adicionales:
+> "Lee docs/CONSTITUTION.md primero."
 
-### 5. Instruir al agente
-Al iniciar una sesión con cualquier agente:
-> "Lee docs/CONSTITUTION.md primero y luego declara tu entendimiento del proyecto."
+El agente diagnostica el proyecto y, con tu aprobación en cada paso, adapta `knowledge/`, `standards/`, `adapters/`, `templates/` y los flujos de trabajo a lo que el proyecto necesita — sea de software o no.
+
+### 4. Trabajar
+Una vez inicializado, cada sesión sigue el protocolo normal de `docs/CONSTITUTION.md`.
 
 ---
 
