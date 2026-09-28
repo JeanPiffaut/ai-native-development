@@ -9,9 +9,9 @@ Actualizar al confirmar cada nueva decisión: agregar a la sección temática co
 
 Las últimas decisiones confirmadas — para contexto de cambios recientes:
 
+- **[019]** [sincronización de template por script](019-sincronizacion-de-template-por-script.md) — `scripts/sync-template.sh` (lo ejecuta el humano) copia a `template` solo los archivos genéricos de `main` y regenera board e INDEX limpios; los genéricos no referencian decisiones de este proyecto — 2026-09-28
 - **[018]** [flujo de inicialización adaptable](018-flujo-de-inicializacion-adaptable.md) — la rama `template` trae `meta.inicializado: false`; el agente sigue `standards/inicializacion.md` y adapta knowledge, standards, adapters, templates y flujos a cada proyecto, sea o no de software — 2026-09-28
 - **[017]** [rama git por tarea](017-rama-git-por-tarea.md) — cada tarea del board se trabaja en su rama `<tipo>/<id>-<slug>`; el agente puede actualizar `main` y crear/cambiar de rama; commit, push y merge siguen siendo humanos — 2026-09-28
-- **[015]** [editar standards/ y adapters/ es válido para correcciones](015-editar-standards-y-adapters-es-valido-para-correcciones.md) — corregir o evolucionar un concepto existente en su archivo es válido; crear archivo nuevo solo para conceptos distintos; `decisions/` mantiene la regla absoluta — 2026-06-22
 
 ---
 
@@ -30,6 +30,7 @@ Las últimas decisiones confirmadas — para contexto de cambios recientes:
 - **[010]** [Git es operación humana exclusiva](010-git-es-operacion-humana.md) — los agentes nunca ejecutan comandos git *(superada parcialmente por [017])*
 - **[017]** [rama git por tarea](017-rama-git-por-tarea.md) — refina [010]: una tarea = una rama; el agente actualiza `main` y crea/cambia de rama; commit, push y merge son humanos
 - **[018]** [flujo de inicialización adaptable](018-flujo-de-inicializacion-adaptable.md) — cada proyecto adapta la base al inicializarse (`meta.inicializado` + `standards/inicializacion.md`); se descartan variantes de template por tipo de proyecto
+- **[019]** [sincronización de template por script](019-sincronizacion-de-template-por-script.md) — implementa [005] con `scripts/sync-template.sh`: lista explícita de archivos genéricos; commit y merge a `template` son humanos
 
 ## Estructura de archivos y herramientas
 

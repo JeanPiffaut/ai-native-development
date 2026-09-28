@@ -26,20 +26,6 @@
       "creada": "2026-07-29"
     },
     {
-      "id": "0006",
-      "titulo": "Script para sincronizar la rama template con main",
-      "tipo": "proceso",
-      "estado": "haciendo",
-      "prioridad": "alta",
-      "contexto": "template quedó atrasada respecto a main (sin prompt de inicialización, sin INDEX.md, con reglas de git viejas). No se puede mergear main a template porque arrastra el contexto de este proyecto; se necesita una forma repetible de copiar solo la parte genérica.",
-      "notas": [
-        "Criterios de aceptación: scripts/sync-template.sh copia los archivos genéricos de main, regenera board.json (inicializado false) e INDEX.md limpios, no incluye el propio script y deja todo sin commitear en una rama creada desde template; decisión 019 confirmada.",
-        "Primera sincronización hecha (PR #7 a template). El script falló al excluirse a sí mismo (faltaba -f en git rm); corregido. Pendiente: referencias a [017] en archivos genéricos."
-      ],
-      "decision_relacionada": "019",
-      "creada": "2026-09-28"
-    },
-    {
       "id": "0007",
       "titulo": "Corregir typo ENVIROMENT en .env.example",
       "tipo": "deuda",
@@ -66,6 +52,12 @@
         "titulo": "Definir flujo de inicialización que adapte el framework a cada proyecto",
         "completada": "2026-09-28",
         "decision_relacionada": "018"
+      },
+      {
+        "id": "0006",
+        "titulo": "Script para sincronizar la rama template con main",
+        "completada": "2026-09-28",
+        "decision_relacionada": "019"
       }
     ]
   }

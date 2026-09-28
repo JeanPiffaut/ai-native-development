@@ -51,7 +51,7 @@ Al inicio de sesión, el agente DEBE declarar:
 - Editar o eliminar decisiones ya confirmadas en `decisions/`
 - Alterar el historial de decisiones
 - Ignorar una decisión confirmada sin crear una nueva que la supere explícitamente
-- Ejecutar operaciones git fuera de las permitidas en `decisions/017` (consultar estado, actualizar `main` con `pull --ff-only`, crear o cambiar a la rama de la tarea). Commit, push, merge, rebase y cualquier otra operación son exclusivamente humanos
+- Ejecutar operaciones git fuera de las permitidas en `standards/agentes.md` — sección "Sobre git" (consultar estado, actualizar `main` con `pull --ff-only`, crear o cambiar a la rama de la tarea). Commit, push, merge, rebase y cualquier otra operación son exclusivamente humanos
 
 ---
 
@@ -80,7 +80,7 @@ Si una decisión cambia, se crea una nueva que referencia la anterior con `super
 `board.json` es el estado vivo del trabajo. El agente debe:
 
 - Consultar `board.json` al inicio de cada sesión para entender el contexto
-- Trabajar toda tarea en su propia rama `<tipo>/<id>-<slug>` creada desde `main` actualizado — nunca directamente sobre `main` (ver `standards/flujo.md` y `decisions/017`)
+- Trabajar toda tarea en su propia rama `<tipo>/<id>-<slug>` creada desde `main` actualizado — nunca directamente sobre `main` (ver `standards/flujo.md`)
 - Proponer nuevas tareas al board cuando las descubra durante el trabajo
 - Al completar una tarea: si tiene `decision_relacionada`, registrarla en `meta.historial`; luego eliminar de `tareas`
 - Las tareas completadas no tienen estado — se eliminan; solo las vinculadas a una decisión quedan en `meta.historial`
