@@ -7,6 +7,8 @@ Es el primer archivo que debes leer. No puede ser modificado por un agente sin a
 
 ## 1. Protocolo de inicio de sesión
 
+**Proyecto sin inicializar:** si `board.json` tiene `meta.inicializado: false`, el agente lee este archivo y `standards/inicializacion.md`, y sigue ese flujo en lugar del protocolo de esta sección. No se aborda ninguna otra tarea hasta completarlo.
+
 Al comenzar cualquier sesión, el agente DEBE leer en este orden:
 
 1. `CONSTITUTION.md` (este archivo)
@@ -49,7 +51,7 @@ Al inicio de sesión, el agente DEBE declarar:
 - Editar o eliminar decisiones ya confirmadas en `decisions/`
 - Alterar el historial de decisiones
 - Ignorar una decisión confirmada sin crear una nueva que la supere explícitamente
-- Ejecutar operaciones git de ningún tipo (commit, push, pull, merge, rebase, branch, checkout) — git es operación humana exclusiva
+- Ejecutar operaciones git fuera de las permitidas en `decisions/017` (consultar estado, actualizar `main` con `pull --ff-only`, crear o cambiar a la rama de la tarea). Commit, push, merge, rebase y cualquier otra operación son exclusivamente humanos
 
 ---
 
@@ -78,6 +80,7 @@ Si una decisión cambia, se crea una nueva que referencia la anterior con `super
 `board.json` es el estado vivo del trabajo. El agente debe:
 
 - Consultar `board.json` al inicio de cada sesión para entender el contexto
+- Trabajar toda tarea en su propia rama `<tipo>/<id>-<slug>` creada desde `main` actualizado — nunca directamente sobre `main` (ver `standards/flujo.md` y `decisions/017`)
 - Proponer nuevas tareas al board cuando las descubra durante el trabajo
 - Al completar una tarea: si tiene `decision_relacionada`, registrarla en `meta.historial`; luego eliminar de `tareas`
 - Las tareas completadas no tienen estado — se eliminan; solo las vinculadas a una decisión quedan en `meta.historial`

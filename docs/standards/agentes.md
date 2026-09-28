@@ -1,6 +1,6 @@
 # Agentes
 
-- **Última actualización:** 2026-06-22
+- **Última actualización:** 2026-09-28
 
 ---
 
@@ -43,7 +43,7 @@ Reglas:
 - Los IDs son numéricos de 4 dígitos con ceros a la izquierda: `0001`, `0002`, `0003`... Únicos y nunca reutilizados, aunque la tarea se haya eliminado
 - Al crear una tarea nueva, tomar `meta.ultimo_id`, incrementar en 1, y actualizar el campo
 - Al completar una tarea: si tiene `decision_relacionada`, agregar entrada a `meta.historial`; luego eliminar la tarea de `tareas`
-- Git es operación humana — el agente nunca ejecuta git aunque el board lo indique
+- Cada tarea se trabaja en su propia rama `<tipo>/<id>-<slug>`; los cambios al board propios de la tarea (pasarla a `haciendo`, notas, eliminarla) se hacen en esa rama y llegan a `main` con el merge humano
 - `contexto` es estático — describe por qué existe la tarea y no cambia
 - `notas` es dinámico — array de strings donde el agente y el humano agregan entradas relevantes durante el trabajo (motivo de bloqueo, descubrimientos, cambios de alcance, etc.). Cada entrada es un string independiente.
 
@@ -62,10 +62,11 @@ Reglas:
 }
 ```
 
-La sección `meta` vive al final del JSON, después de `tareas`:
+La sección `meta` vive al final del JSON, después de `tareas`. `inicializado` indica si el proyecto ya pasó por el flujo de `standards/inicializacion.md`; en la rama `template` vale `false`:
 
 ```json
 "meta": {
+  "inicializado": true,
   "ultimo_id": "0001",
   "historial": [
     {
@@ -131,14 +132,14 @@ No aplica cuando:
 ## Límites del agente
 
 El agente no debe:
-- Ejecutar operaciones git de ningún tipo — git es responsabilidad humana exclusiva
+- Ejecutar operaciones git fuera de las permitidas en [017]
 - Tomar decisiones de arquitectura sin registrarlas
 - Modificar `CONSTITUTION.md` o decisiones confirmadas
 - Asumir que algo "no importa" sin verificarlo en `knowledge/principios.md`
 - Resolver ambigüedades silenciosamente cuando afectan el diseño
 - Asumir versiones de herramientas sin verificar — ver sección anterior
 
-**Sobre git:** el agente puede sugerir qué commitear, con qué mensaje y en qué rama, pero nunca ejecutar los comandos. La revisión humana antes del commit es una garantía deliberada del proceso.
+**Sobre git:** el agente solo puede consultar estado (`status`, `branch`, `log`, `diff`), actualizar `main` (`checkout main` + `pull --ff-only`) y crear o cambiar a la rama de la tarea (`checkout -b` / `checkout`). Si hay cambios sin commitear o algo falla, se detiene y avisa. Commit, push, merge, rebase y cualquier otra operación son humanos: el agente sugiere qué commitear y con qué mensaje, pero no lo ejecuta. La revisión humana antes del commit y el merge a `main` es una garantía deliberada del proceso — `main` solo cambia por merges humanos.
 
 ---
 
@@ -156,3 +157,5 @@ Si el orquestador o modelo tiene convenciones propias (ej. archivos de configura
 - **2026-06-22** — Eliminado resumen del protocolo de inicio; reemplazado por referencia directa a `CONSTITUTION.md §1` para evitar divergencias entre fuentes.
 - **2026-06-22** — Regla de historial refinada: solo las tareas con `decision_relacionada` se registran en `meta.historial` al completarse. Tareas sin decisión vinculada se eliminan directamente. Aplica también a tareas recurrentes (paso agregado).
 - **2026-06-22** — Párrafo introductorio de "Cómo actualizar el board" corregido: la frase incondicional "se registran en meta.historial" reemplazada por la versión condicional. Esquema JSON de historial: campo `decision_relacionada` corregido de "NNN o null" a "NNN" — en historial siempre es no-nulo por definición de [014].
+- **2026-09-28** — Git: la prohibición total se reemplaza por las operaciones permitidas en [017] (actualizar `main`, crear/cambiar a la rama de la tarea). Regla del board: los cambios propios de una tarea viajan en su rama.
+- **2026-09-28** — Esquema de `meta`: agregado `inicializado` (dispara el flujo de `standards/inicializacion.md` cuando es `false`). Según [018].
