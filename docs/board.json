@@ -24,10 +24,21 @@
       "notas": [],
       "decision_relacionada": "016",
       "creada": "2026-07-29"
+    },
+    {
+      "id": "0004",
+      "titulo": "Clonar repos externos e inicializarlos con el framework",
+      "tipo": "proceso",
+      "estado": "haciendo",
+      "prioridad": "media",
+      "contexto": "Hay repos existentes que se necesitan clonar a local e inicializar con este framework (docs/, CLAUDE.md, board inicial) para trabajarlos con agentes bajo el mismo protocolo.",
+      "notas": [],
+      "decision_relacionada": null,
+      "creada": "2026-09-28"
     }
   ],
   "meta": {
-    "ultimo_id": "0003",
+    "ultimo_id": "0004",
     "historial": [
       {
         "id": "0003",
