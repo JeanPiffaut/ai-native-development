@@ -1,6 +1,6 @@
 {
   "proyecto": "AI-Native Development Framework",
-  "actualizado": "2026-07-29",
+  "actualizado": "2026-09-28",
   "tareas": [
     {
       "id": "0001",
@@ -24,10 +24,23 @@
       "notas": [],
       "decision_relacionada": "016",
       "creada": "2026-07-29"
+    },
+    {
+      "id": "0003",
+      "titulo": "Rama git por tarea y permisos git acotados para el agente",
+      "tipo": "proceso",
+      "estado": "haciendo",
+      "prioridad": "alta",
+      "contexto": "Se quiere mantener main limpio: todo cambio llega a main solo por merge humano. Cada tarea del board debe trabajarse en su propia rama, y el agente necesita permisos mínimos (actualizar main, crear/cambiar a la rama de la tarea) que hoy prohíbe la [010].",
+      "notas": [
+        "Criterios de aceptación: decisión 017 confirmada; CONSTITUTION §2, standards/agentes.md y standards/flujo.md reflejan la regla de rama por tarea y las operaciones git permitidas; decisions/INDEX.md actualizado."
+      ],
+      "decision_relacionada": "017",
+      "creada": "2026-09-28"
     }
   ],
   "meta": {
-    "ultimo_id": "0002",
+    "ultimo_id": "0003",
     "historial": []
   }
 }
