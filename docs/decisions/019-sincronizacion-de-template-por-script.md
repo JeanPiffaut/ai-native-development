@@ -1,6 +1,6 @@
 # [019] La rama template se sincroniza con un script que separa lo genérico de lo propio del proyecto
 
-- **Estado:** BORRADOR
+- **Estado:** CONFIRMADA
 - **Fecha:** 2026-09-28
 - **Supera a:** —
 - **Superada por:** —

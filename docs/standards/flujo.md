@@ -28,7 +28,7 @@
 3. Si no existe: `git checkout main` → `git pull --ff-only` → `git checkout -b <tipo>/<id>-<slug>`
 4. Si `pull --ff-only` falla o hay cualquier error, detenerse y avisar al humano
 
-Nombre de rama: `<tipo>/<id>-<slug-en-kebab-case>` con `tipo` e `id` de la tarea (ej. `feature/0002-prompt-inicializacion`). Ver [017] para las operaciones git permitidas.
+Nombre de rama: `<tipo>/<id>-<slug-en-kebab-case>` con `tipo` e `id` de la tarea (ej. `feature/0002-prompt-inicializacion`). Las operaciones git permitidas al agente están en `standards/agentes.md` — sección "Sobre git".
 
 - Seguir convenciones definidas en `standards/convenciones.md`
 - Seguir el adapter correspondiente si aplica (`adapters/`)
@@ -90,3 +90,4 @@ No interrumpir el flujo de trabajo para resolver problemas colaterales salvo que
 - **2026-06-22** — Corregidos estados del board en pasos 3 y 5: `en-progreso` → `haciendo`; `estado completada` → eliminar tarea del JSON. Alineado con el schema definido en `standards/agentes.md`.
 - **2026-06-22** — Paso 5 "Registrar": agregado el paso condicional de registrar en `meta.historial` antes de eliminar la tarea, alineado con [014].
 - **2026-09-28** — Paso 3 "Implementar": agregado bloque "Rama de la tarea" (una tarea = una rama `<tipo>/<id>-<slug>` desde `main` actualizado). Paso 5: la rama queda lista para commit y merge humano. Según [017].
+- **2026-09-28** — Paso 3: la referencia a [017] se reemplaza por `standards/agentes.md` ("Sobre git"), para que la regla sea autocontenida en proyectos derivados de `template`.
