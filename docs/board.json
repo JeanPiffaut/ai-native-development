@@ -26,19 +26,22 @@
       "creada": "2026-07-29"
     },
     {
-      "id": "0004",
-      "titulo": "Clonar repos externos e inicializarlos con el framework",
+      "id": "0005",
+      "titulo": "Definir flujo de inicialización que adapte el framework a cada proyecto",
       "tipo": "proceso",
       "estado": "haciendo",
-      "prioridad": "media",
-      "contexto": "Hay repos existentes que se necesitan clonar a local e inicializar con este framework (docs/, CLAUDE.md, board inicial) para trabajarlos con agentes bajo el mismo protocolo.",
-      "notas": [],
-      "decision_relacionada": null,
+      "prioridad": "alta",
+      "contexto": "Al llevar la rama template a un proyecto, la base se usa tal cual y trae convenciones de software que no aplican a todos los proyectos. Se necesita un flujo de inicialización que defina archivos, standards, adapters y flujos según lo que cada proyecto necesite, sin limitarse a desarrollo de software. Bloquea a la 0004 (clonar e inicializar repos externos).",
+      "notas": [
+        "Criterios de aceptación: decisión 018 confirmada; standards/inicializacion.md creado; CONSTITUTION §1 dispara el flujo con meta.inicializado=false; esquema de meta actualizado en standards/agentes.md; README y knowledge/negocio.md reflejan el nuevo modo de uso; este board con meta.inicializado=true."
+      ],
+      "decision_relacionada": "018",
       "creada": "2026-09-28"
     }
   ],
   "meta": {
-    "ultimo_id": "0004",
+    "inicializado": true,
+    "ultimo_id": "0005",
     "historial": [
       {
         "id": "0003",

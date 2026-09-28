@@ -7,6 +7,8 @@ Es el primer archivo que debes leer. No puede ser modificado por un agente sin a
 
 ## 1. Protocolo de inicio de sesión
 
+**Proyecto sin inicializar:** si `board.json` tiene `meta.inicializado: false`, el agente lee este archivo y `standards/inicializacion.md`, y sigue ese flujo en lugar del protocolo de esta sección. No se aborda ninguna otra tarea hasta completarlo.
+
 Al comenzar cualquier sesión, el agente DEBE leer en este orden:
 
 1. `CONSTITUTION.md` (este archivo)

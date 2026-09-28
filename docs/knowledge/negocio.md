@@ -1,6 +1,6 @@
 # Negocio
 
-- **Última actualización:** 2026-06-22
+- **Última actualización:** 2026-09-28
 
 ---
 
@@ -21,11 +21,11 @@ Desarrolladores o equipos pequeños que usan agentes de IA como parte activa del
 
 ## Modelo de valor
 
-El framework se clona como base de un proyecto nuevo. El código real vive en `src/`, la documentación estructurada en `docs/`. El agente lee `CLAUDE.md` al iniciar → carga `docs/CONSTITUTION.md` → sigue el protocolo de lectura → trabaja con contexto completo sin instrucciones adicionales del usuario.
+La rama `template` se lleva a la raíz de un proyecto, nuevo o existente, de software o de cualquier otra naturaleza (documentación, investigación, datos, operación, contenido). En la primera sesión el agente detecta que el proyecto no está inicializado y sigue `standards/inicializacion.md`: diagnostica el proyecto y, con aprobación humana, adapta knowledge, standards, adapters, templates y flujos a lo que ese proyecto necesita. Desde ahí, el agente lee `CLAUDE.md` al iniciar → carga `docs/CONSTITUTION.md` → sigue el protocolo de lectura → trabaja con contexto completo sin instrucciones adicionales del usuario.
 
 ## Estado actual
 
-Versión 1.0 completada. Framework base funcional con CONSTITUTION, standards, adapters y templates listos. Pendiente: crear variantes etiquetadas (template limpio, template NestJS) a partir de esta base mediante tags de git.
+Framework base funcional con CONSTITUTION, standards, adapters y templates. `main` es donde se trabaja el framework; `template` es la base limpia que se lleva a otros proyectos. En lugar de variantes de template por tipo de proyecto, cada proyecto se adapta con el flujo de inicialización ([018]).
 
 ## Métricas de éxito
 
@@ -39,3 +39,9 @@ Versión 1.0 completada. Framework base funcional con CONSTITUTION, standards, a
 - No es un framework de código (no reemplaza NestJS, React u otros)
 - No está atado a ningún orquestador, modelo ni lenguaje de programación
 - No es una plataforma de documentación — es una convención de estructura de archivos
+
+---
+
+## Historial de cambios
+
+- **2026-09-28** — Modelo de valor y estado actual: el framework se lleva desde la rama `template` y se adapta a cada proyecto (no solo software) mediante el flujo de inicialización; se descarta el plan de variantes de template. Según [018].
