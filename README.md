@@ -26,16 +26,16 @@ Una plantilla de proyecto diseñada para que cualquier agente de IA pueda:
 La rama `template` es la base limpia; `main` es donde se trabaja el framework en sí.
 
 ### 1. Llevar la base al proyecto
-Copiar el contenido de la rama `template` (`CLAUDE.md`, `docs/`, `scripts/`, `.gitignore`, `.env.example`) a la raíz del proyecto, nuevo o existente. Si el proyecto ya tiene `.gitignore` o `README.md`, combinarlos en lugar de sobrescribirlos.
+Copiar el contenido de la rama `template` (`CLAUDE.md`, `.claude/skills/`, `docs/`, `scripts/`, `.gitignore`, `.env.example`) a la raíz del proyecto, nuevo o existente. Si el proyecto ya tiene `.gitignore` o `README.md`, combinarlos en lugar de sobrescribirlos.
 
 ### 2. (Opcional) Traer la idea validada
-Si la idea se discutió en otra app de IA, usar `docs/templates/prompt-inicializacion.md` al cierre de esa conversación y guardar el resumen resultante.
+Si la idea se discutió en otra app de IA, usar `.claude/skills/inicializar/assets/prompt-externo.md` al cierre de esa conversación y guardar el resumen resultante.
 
 ### 3. Abrir una sesión con el agente
-El board de la base trae `meta.inicializado: false`, así que el agente arranca el flujo de inicialización (`docs/standards/inicializacion.md`) sin instrucciones adicionales:
+El board de la base trae `meta.inicializado: false`, así que el agente arranca el flujo de inicialización (skill `inicializar`) sin instrucciones adicionales:
 > "Lee docs/CONSTITUTION.md primero."
 
-El agente diagnostica el proyecto y, con tu aprobación en cada paso, adapta `knowledge/`, `standards/`, `adapters/`, `templates/` y los flujos de trabajo a lo que el proyecto necesita — sea de software o no.
+El agente diagnostica el proyecto y, con tu aprobación en cada paso, adapta `knowledge/`, `standards/`, `adapters/`, `templates/`, las skills y los flujos de trabajo a lo que el proyecto necesita — sea de software o no. Al terminar, propone eliminar la skill `inicializar` y su prompt, que ya no tienen uso en el proyecto.
 
 ### 4. Trabajar
 Una vez inicializado, cada sesión sigue el protocolo normal de `docs/CONSTITUTION.md`.
@@ -47,6 +47,8 @@ Una vez inicializado, cada sesión sigue el protocolo normal de `docs/CONSTITUTI
 ```
 proyecto/
 ├── README.md             ← Este archivo
+├── CLAUDE.md             ← Entrada automática para Claude Code (redirige a la CONSTITUTION)
+├── .claude/skills/       ← Procedimientos que el agente carga cuando los usa
 ├── docs/                 ← Framework de documentación
 │   ├── CONSTITUTION.md   ← Contrato operativo para agentes (leer primero)
 │   ├── board.json        ← Estado vivo del trabajo
@@ -54,7 +56,8 @@ proyecto/
 │   ├── decisions/        ← Registro append-only de decisiones
 │   ├── standards/        ← Cómo se trabaja
 │   ├── adapters/         ← Convenciones por herramienta o tecnología
-│   └── templates/        ← Plantillas reutilizables
+│   ├── templates/        ← Plantillas reutilizables
+│   └── estudio/          ← Fichas de estudio para el humano (se crean a pedido)
 │
 └── src/                  ← El proyecto real
 ```
@@ -71,6 +74,7 @@ proyecto/
 | `docs/knowledge/` | Contexto del proyecto | Humano (agente propone) |
 | `docs/standards/` | Cómo se trabaja | Humano (agente propone) |
 | `docs/adapters/` | Convenciones específicas | Agente + humano |
+| `docs/estudio/` | Fichas de estudio para el humano; no es contexto del agente | Agente, a pedido del humano |
 
 ---
 

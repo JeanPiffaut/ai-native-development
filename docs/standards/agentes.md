@@ -1,6 +1,7 @@
 # Agentes
 
-- **Última actualización:** 2026-09-28
+- **Última actualización:** 2026-10-15
+- **Lectura:** siempre
 
 ---
 
@@ -22,75 +23,23 @@ Ver `CONSTITUTION.md §1` — es la única fuente de verdad para el orden de lec
 
 ---
 
-## Cómo proponer una decisión
+## Decisiones
 
-```
-1. Detectar que se va a tomar una decisión relevante
-2. Crear borrador en decisions/ usando templates/decision.md
-3. Nombrar: NNN-titulo-en-kebab-case.md (estado: BORRADOR)
-4. Presentar al usuario con las alternativas evaluadas
-5. Esperar confirmación antes de marcar como CONFIRMADA
-6. Implementar según la decisión confirmada
-```
+Toda decisión relevante se registra como `BORRADOR` y se implementa una vez confirmada por el humano (`CONSTITUTION.md §3`). Los pasos están en la skill `decision`.
 
 ---
 
-## Cómo actualizar el board
+## Board
 
-El board refleja únicamente el trabajo activo. Las tareas completadas se eliminan; las que tienen `decision_relacionada` se registran en `meta.historial` antes de eliminarlas.
+El board refleja únicamente el trabajo activo. Reglas:
+- Los IDs son numéricos de 4 dígitos (`0001`, `0002`…), únicos y nunca reutilizados, aunque la tarea se haya eliminado
+- Las tareas completadas se eliminan; solo las que tienen `decision_relacionada` se registran antes en `meta.historial`
+- Las tareas `recurrente` llevan `cadencia` y, al completarse, se recrean; si no, la recurrencia se pierde
+- `contexto` es estático; `notas` registra lo que surge durante el trabajo
+- Los cambios al board propios de una tarea se hacen en su rama y llegan a `main` con el merge humano
+- `meta.inicializado` en `false` indica que el proyecto no pasó por la inicialización
 
-Reglas:
-- Los IDs son numéricos de 4 dígitos con ceros a la izquierda: `0001`, `0002`, `0003`... Únicos y nunca reutilizados, aunque la tarea se haya eliminado
-- Al crear una tarea nueva, tomar `meta.ultimo_id`, incrementar en 1, y actualizar el campo
-- Al completar una tarea: si tiene `decision_relacionada`, agregar entrada a `meta.historial`; luego eliminar la tarea de `tareas`
-- Cada tarea se trabaja en su propia rama `<tipo>/<id>-<slug>`; los cambios al board propios de la tarea (pasarla a `haciendo`, notas, eliminarla) se hacen en esa rama y llegan a `main` con el merge humano
-- `contexto` es estático — describe por qué existe la tarea y no cambia
-- `notas` es dinámico — array de strings donde el agente y el humano agregan entradas relevantes durante el trabajo (motivo de bloqueo, descubrimientos, cambios de alcance, etc.). Cada entrada es un string independiente.
-
-```json
-{
-  "id": "0001",
-  "titulo": "Descripción corta de la tarea",
-  "tipo": "feature | bug | deuda | investigacion | proceso | recurrente",
-  "cadencia": "mensual | trimestral | semestral | anual",
-  "estado": "pendiente | haciendo | bloqueado",
-  "prioridad": "alta | media | baja",
-  "contexto": "Por qué existe esta tarea. Qué la originó. No cambia.",
-  "notas": [],
-  "decision_relacionada": "NNN o null",
-  "creada": "YYYY-MM-DD"
-}
-```
-
-La sección `meta` vive al final del JSON, después de `tareas`. `inicializado` indica si el proyecto ya pasó por el flujo de `standards/inicializacion.md`; en la rama `template` vale `false`:
-
-```json
-"meta": {
-  "inicializado": true,
-  "ultimo_id": "0001",
-  "historial": [
-    {
-      "id": "0001",
-      "titulo": "Descripción corta de la tarea",
-      "completada": "YYYY-MM-DD",
-      "decision_relacionada": "NNN"
-    }
-  ]
-}
-```
-
-## Tareas recurrentes
-
-Las tareas con `tipo: recurrente` representan trabajo periódico que debe repetirse. Incluyen el campo `cadencia` para indicar la frecuencia.
-
-Al completar una tarea recurrente, el agente **debe**:
-1. Si la tarea tiene `decision_relacionada`, agregar entrada a `meta.historial`
-2. Crear una nueva instancia de la tarea con `creada` actualizada a la fecha actual
-3. Eliminar la tarea completada del board
-
-Si no se re-crea la tarea, el ciclo se rompe y la recurrencia se pierde. La re-creación es responsabilidad del agente que completa la tarea.
-
-El campo `cadencia` no es obligatorio en tareas de otros tipos. En tareas recurrentes, es obligatorio.
+El esquema y los pasos para crear, actualizar y completar tareas están en la skill `board`.
 
 ---
 
@@ -160,3 +109,5 @@ Si el orquestador o modelo tiene convenciones propias (ej. archivos de configura
 - **2026-09-28** — Git: la prohibición total se reemplaza por las operaciones permitidas en [017] (actualizar `main`, crear/cambiar a la rama de la tarea). Regla del board: los cambios propios de una tarea viajan en su rama.
 - **2026-09-28** — Esquema de `meta`: agregado `inicializado` (dispara el flujo de `standards/inicializacion.md` cuando es `false`). Según [018].
 - **2026-09-28** — Límites del agente: la referencia a [017] se reemplaza por la sección "Sobre git", para que la regla sea autocontenida en proyectos donde `decisions/` no incluye la [017].
+- **2026-10-15** — Encabezado: agregado el campo `Lectura` (siempre).
+- **2026-10-15** — "Cómo proponer una decisión", "Cómo actualizar el board" y "Tareas recurrentes" se reducen a sus reglas (secciones "Decisiones" y "Board"); el esquema del board y los pasos pasan a las skills `decision` y `board`.
