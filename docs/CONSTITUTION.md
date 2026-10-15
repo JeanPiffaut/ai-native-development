@@ -7,7 +7,7 @@ Es el primer archivo que debes leer. No puede ser modificado por un agente sin a
 
 ## 1. Protocolo de inicio de sesión
 
-**Proyecto sin inicializar:** si `board.json` tiene `meta.inicializado: false`, el agente lee este archivo y `standards/inicializacion.md`, y sigue ese flujo en lugar del protocolo de esta sección. No se aborda ninguna otra tarea hasta completarlo.
+**Proyecto sin inicializar:** si `board.json` tiene `meta.inicializado: false`, el agente lee este archivo y sigue la skill `inicializar` en lugar del protocolo de esta sección. No se aborda ninguna otra tarea hasta completarlo.
 
 Al comenzar cualquier sesión, el agente DEBE leer en este orden:
 
@@ -21,6 +21,8 @@ Al comenzar cualquier sesión, el agente DEBE leer en este orden:
 8. Al abordar una tarea: los standards con lectura condicional cuya condición se cumple, y el adapter relevante en `adapters/`
 
 Si alguno de estos archivos no existe todavía, continuar sin él e informar al usuario.
+
+**Skills:** los procedimientos (cómo hacer algo concreto) viven en skills, en `.claude/skills/<nombre>/SKILL.md`, y se cargan solo cuando se usan. Cuando una regla indica seguir una skill y el orquestador no las soporta o no la cargó, el agente lee ese `SKILL.md` directamente.
 
 Al inicio de sesión, el agente DEBE declarar:
 - Qué archivos leyó como contexto
@@ -65,11 +67,7 @@ Una decisión debe registrarse cuando:
 - Se descarta una alternativa que podría parecer obvia
 - Se resuelve un conflicto entre dos enfoques válidos
 
-Cuando corresponda registrar una decisión, el agente debe:
-1. Crear un borrador usando `templates/decision.md`
-2. Nombrar el archivo: `NNN-titulo-en-kebab-case.md` (número correlativo)
-3. Marcar el estado como `BORRADOR`
-4. Informar al usuario y pedir confirmación antes de marcarlo como `CONFIRMADA`
+Toda decisión nace como `BORRADOR` y solo pasa a `CONFIRMADA` con aprobación humana explícita. Para registrarla o confirmarla, seguir la skill `decision`.
 
 Las decisiones confirmadas son append-only: nunca se editan.
 Si una decisión cambia, se crea una nueva que referencia la anterior con `supera-a: NNN`.
@@ -85,6 +83,7 @@ Si una decisión cambia, se crea una nueva que referencia la anterior con `super
 - Proponer nuevas tareas al board cuando las descubra durante el trabajo
 - Al completar una tarea: si tiene `decision_relacionada`, registrarla en `meta.historial`; luego eliminar de `tareas`
 - Las tareas completadas no tienen estado — se eliminan; solo las vinculadas a una decisión quedan en `meta.historial`
+- Crear, actualizar y completar tareas siguiendo la skill `board`
 
 ---
 
@@ -119,6 +118,7 @@ Cuando debas decidir dónde vive un archivo nuevo, aplicar esta distinción:
 | `adapters/` | Convenciones de una herramienta o tecnología específica | Solo aplica si el proyecto **usa esa herramienta**; otro proyecto podría no usarla |
 | `templates/` | Plantillas reutilizables | Es un molde que se reutiliza para crear otros documentos |
 | `estudio/` | Fichas de estudio para el humano, fuera del contexto de trabajo del agente | Es un concepto que el humano pidió entender (ver `standards/estudio.md`) |
+| `.claude/skills/` | Procedimientos: pasos para hacer algo concreto, que se cargan solo cuando se usan | Es un paso a paso, no una regla que deba aplicar siempre (las reglas van en `CONSTITUTION.md` o `standards/` y nombran la skill) |
 
 **Regla de distinción clave — standards vs adapters:**
 Si la convención aplica igual en un proyecto React que en uno de NestJS que en uno sin código → va en `standards/`.

@@ -1,6 +1,6 @@
 # Prompt de extracción de idea (para usar en apps externas)
 
-- **Última actualización:** 2026-07-29
+- **Última actualización:** 2026-10-15
 
 ---
 
@@ -48,11 +48,14 @@ explícitamente en vez de inventar contenido.
 ## Qué hacer con el resultado
 
 Guardá la respuesta tal cual te la den. Llevala a este framework, abrí una
-sesión nueva acá y pegásela al agente pidiéndole que la use como base para
-completar `docs/knowledge/` y, si corresponde, dejar decisiones borrador en
-`docs/decisions/`. El agente de este repo ya sabe cómo hacerlo siguiendo
-`docs/CONSTITUTION.md` — no hace falta ninguna instrucción especial adicional
-más que "acá está la idea validada, arranquemos el proyecto".
+sesión nueva acá y pegásela al agente. Mientras el proyecto no esté
+inicializado, el agente sigue la skill `inicializar` y usa el resumen como
+fuente principal del diagnóstico para completar `docs/knowledge/` y dejar
+decisiones borrador en `docs/decisions/` — no hace falta ninguna instrucción
+especial adicional más que "acá está la idea validada, arranquemos el proyecto".
+
+Al terminar la inicialización, este archivo y la skill `inicializar` ya no
+tienen uso en el proyecto: el agente propone eliminarlos.
 
 ## Por qué el prompt no menciona nada de este framework
 

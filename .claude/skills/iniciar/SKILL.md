@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 Inicia la sesión según `docs/CONSTITUTION.md`. Esta skill no agrega reglas: ordena los pasos y fija el formato de la declaración.
 
-1. Lee `docs/CONSTITUTION.md`. Si `docs/board.json` tiene `meta.inicializado: false`, sigue `docs/standards/inicializacion.md` y no continúes con esta skill.
+1. Lee `docs/CONSTITUTION.md`. Si `docs/board.json` tiene `meta.inicializado: false`, sigue la skill `inicializar` y no continúes con esta.
 2. Lee los archivos en el orden de §1. Los standards con lectura condicional y el adapter de la tarea se leen cuando se elige la tarea, no ahora. No leas `docs/estudio/` (ver `docs/standards/estudio.md`).
 3. Consulta el estado de git con las operaciones permitidas en `docs/standards/agentes.md` ("Sobre git").
 4. Declara, en este formato:

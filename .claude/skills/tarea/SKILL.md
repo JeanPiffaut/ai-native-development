@@ -35,5 +35,10 @@ Espera a que el humano resuelva las dudas y apruebe alcance y criterios. No prop
 
 Con el acuerdo:
 - Registra los criterios de aceptación como primera entrada de `notas` (`docs/standards/calidad.md`)
-- Prepara la rama según `docs/standards/flujo.md` paso 3 y pasa la tarea a `haciendo`
+- Prepara la rama `<tipo>/<id>-<slug-en-kebab-case>` (con `tipo` e `id` de la tarea), solo con las operaciones de `docs/standards/agentes.md` ("Sobre git"):
+  1. `git status` — si hay cambios sin commitear, detente y avisa al humano (no hagas stash ni descartes nada)
+  2. Si la rama ya existe: `git checkout <rama>`
+  3. Si no existe: `git checkout main` → `git pull --ff-only` → `git checkout -b <rama>`
+  4. Si `pull --ff-only` falla o hay cualquier error, detente y avisa al humano
+- Pasa la tarea a `haciendo` (skill `board`)
 - Sigue con el paso 2 de `docs/standards/flujo.md` ("Especificar"): el enfoque se debate antes de implementar

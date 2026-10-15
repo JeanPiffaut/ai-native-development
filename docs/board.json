@@ -51,10 +51,11 @@
       "id": "0013",
       "titulo": "Mover procedimientos de standards a skills",
       "tipo": "proceso",
-      "estado": "pendiente",
+      "estado": "haciendo",
       "prioridad": "media",
       "contexto": "Según la decisión 022, los procedimientos salen de standards/ y pasan a skills: inicializar (desde inicializacion.md), decision (desde CONSTITUTION §3 y agentes.md), estudiar (detalle de estudio.md), tarea y cerrar (procedimientos de flujo.md y agentes.md). Cada regla que se queda nombra la skill a seguir; CONSTITUTION incorpora el respaldo de leer el SKILL.md directamente.",
       "notas": [
+        "Criterios de aceptación: ningún standard de lectura siempre contiene pasos de procedimiento; cada regla que perdió su procedimiento nombra la skill que lo tiene; las skills nuevas cumplen la spec (name igual a la carpeta, description con cuándo usarla); la lectura de inicio baja; adapters/claude.md y README al día.",
         "Evaluar aquí el prompt de inicialización (templates/prompt-inicializacion.md) como parte de la skill inicializar; pendiente aclarar con el humano si se borra en proyectos derivados después de usarse.",
         "Puede dividirse en una tarea por skill si resulta grande."
       ],
