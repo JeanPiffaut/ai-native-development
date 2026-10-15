@@ -1,8 +1,7 @@
 ---
 name: estudiar
-description: Crea o amplía una ficha de estudio en docs/estudio/ sobre un concepto que el humano necesita entender, con fuentes primarias verificadas y preguntas de comprensión, según docs/standards/estudio.md.
+description: Crea o amplía una ficha de estudio en docs/estudio/ con fuentes primarias verificadas y preguntas de comprensión, según docs/standards/estudio.md. Usar solo cuando el humano pide entender un concepto ("no entiendo X", "explícame X", "quiero estudiar X"). No usar por iniciativa propia al detectar un concepto nuevo; en ese caso, solo sugerir la ficha en una línea.
 argument-hint: "[tema]"
-disable-model-invocation: true
 ---
 
 Tema a estudiar: $ARGUMENTS

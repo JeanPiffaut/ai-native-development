@@ -36,7 +36,7 @@ Hay dos restricciones del framework: debe seguir siendo agnóstico al orquestado
 ## Decisión
 
 - Cuatro skills en `.claude/skills/`: `/iniciar` (inicio de sesión), `/tarea <id>` (análisis completo de una tarea para trabajarla en conjunto), `/cerrar` (cierre de sesión, no de tarea) y `/estudiar <tema>` (ficha de estudio).
-- Todas con `disable-model-invocation: true`: las dispara el humano.
+- `/iniciar`, `/tarea` y `/cerrar` con `disable-model-invocation: true`: las dispara el humano. `/estudiar` permite la invocación del modelo para que el humano pueda pedir una ficha en lenguaje natural; su `description` la restringe a pedidos explícitos del humano, en línea con `standards/estudio.md` (el agente sugiere, no crea).
 - Son envoltorios: ordenan pasos y fijan formatos de salida; las reglas viven en `CONSTITUTION.md` y `standards/`. Una regla nueva se propone en el standard, no en la skill.
 - Son genéricas: no referencian decisiones y viajan a `template` (`.claude/skills` se agrega a `BASE_PATHS` de `scripts/sync-template.sh`).
 - `adapters/claude.md` documenta las skills y las reglas para crearlas.

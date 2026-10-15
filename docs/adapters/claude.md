@@ -91,7 +91,7 @@ Viven en `.claude/skills/`, fuera de `docs/`, y viajan a la rama `template` con 
 
 Reglas para crear o modificar skills:
 - **Envoltorio delgado** — la skill ordena pasos y fija formatos de salida; las reglas viven en `CONSTITUTION.md` y `standards/`. Si una skill necesita una regla que no existe, la regla se propone en el standard, no en la skill
-- **Invocación humana** — `disable-model-invocation: true`: las skills las dispara el humano, no el agente por su cuenta
+- **Invocación humana** — por defecto `disable-model-invocation: true`: las skills las dispara el humano. Excepción: si la skill responde a un pedido que el humano puede hacer en lenguaje natural (como `/estudiar`), se permite la invocación del modelo y la `description` limita cuándo aplica, para que el agente no la dispare por iniciativa propia
 - **Rutas desde la raíz** — las skills referencian `docs/...` porque se ejecutan desde la raíz del repositorio
 - **Sin referencias a decisiones** — son genéricas y viajan a `template`
 
