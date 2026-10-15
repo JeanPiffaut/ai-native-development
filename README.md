@@ -54,7 +54,8 @@ proyecto/
 │   ├── decisions/        ← Registro append-only de decisiones
 │   ├── standards/        ← Cómo se trabaja
 │   ├── adapters/         ← Convenciones por herramienta o tecnología
-│   └── templates/        ← Plantillas reutilizables
+│   ├── templates/        ← Plantillas reutilizables
+│   └── estudio/          ← Fichas de estudio para el humano (se crean a pedido)
 │
 └── src/                  ← El proyecto real
 ```
@@ -71,6 +72,7 @@ proyecto/
 | `docs/knowledge/` | Contexto del proyecto | Humano (agente propone) |
 | `docs/standards/` | Cómo se trabaja | Humano (agente propone) |
 | `docs/adapters/` | Convenciones específicas | Agente + humano |
+| `docs/estudio/` | Fichas de estudio para el humano; no es contexto del agente | Agente, a pedido del humano |
 
 ---
 

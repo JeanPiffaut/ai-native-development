@@ -1,6 +1,7 @@
 # Convenciones
 
-- **Última actualización:** 2026-06-22
+- **Última actualización:** 2026-10-15
+- **Lectura:** siempre
 
 ---
 
@@ -41,6 +42,20 @@ Todo archivo en `knowledge/` debe comenzar con:
 ---
 ```
 
+## Estructura de un archivo de standards
+
+Todo archivo en `standards/` debe comenzar con:
+```
+# Título
+- **Última actualización:** YYYY-MM-DD
+- **Lectura:** siempre | cuando <condición>
+---
+```
+
+- `siempre` — contiene reglas que aplican en cualquier sesión; se lee al inicio (`CONSTITUTION.md §1`)
+- `cuando <condición>` — es referencia que solo aplica a cierto tipo de tarea (ej. "cuando la tarea produce o modifica código"); se lee al abordar una tarea que cumple la condición
+- Un standard con lectura condicional no puede contener reglas que deban aplicar siempre; si las tiene, esas reglas van en un standard de lectura `siempre`
+
 ## Estructura de board.json
 
 Ver esquema completo en `standards/agentes.md` (sección "Cómo actualizar el board").
@@ -57,3 +72,4 @@ Cuando un archivo en `standards/` cambia de forma significativa:
 ## Historial de cambios
 
 - **2026-06-22** — Referencia de schema de board.json corregida: de `board.json` a `standards/agentes.md`.
+- **2026-10-15** — Encabezado: agregado el campo `Lectura` (siempre). Nueva sección "Estructura de un archivo de standards": encabezado obligatorio con el campo `Lectura` y sus valores.

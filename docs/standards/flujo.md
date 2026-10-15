@@ -1,6 +1,7 @@
 # Flujo de trabajo
 
-- **Última actualización:** 2026-09-28
+- **Última actualización:** 2026-10-15
+- **Lectura:** siempre
 
 ---
 
@@ -91,3 +92,4 @@ No interrumpir el flujo de trabajo para resolver problemas colaterales salvo que
 - **2026-06-22** — Paso 5 "Registrar": agregado el paso condicional de registrar en `meta.historial` antes de eliminar la tarea, alineado con [014].
 - **2026-09-28** — Paso 3 "Implementar": agregado bloque "Rama de la tarea" (una tarea = una rama `<tipo>/<id>-<slug>` desde `main` actualizado). Paso 5: la rama queda lista para commit y merge humano. Según [017].
 - **2026-09-28** — Paso 3: la referencia a [017] se reemplaza por `standards/agentes.md` ("Sobre git"), para que la regla sea autocontenida en proyectos derivados de `template`.
+- **2026-10-15** — Encabezado: agregado el campo `Lectura` (siempre).

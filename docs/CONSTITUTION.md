@@ -17,8 +17,8 @@ Al comenzar cualquier sesión, el agente DEBE leer en este orden:
 4. `knowledge/principios.md`
 5. `board.json` — para entender el estado actual del trabajo
 6. `decisions/INDEX.md` — índice temático de todas las decisiones; incluye sección "Recientes" con las últimas confirmadas
-7. Todos los archivos en `standards/` — cada archivo es un estándar independiente; leerlos todos
-8. El adapter relevante en `adapters/` según la tarea a realizar
+7. Los archivos en `standards/` con `Lectura: siempre` en su encabezado — cada archivo es un estándar independiente
+8. Al abordar una tarea: los standards con lectura condicional cuya condición se cumple, y el adapter relevante en `adapters/`
 
 Si alguno de estos archivos no existe todavía, continuar sin él e informar al usuario.
 
@@ -38,6 +38,7 @@ Al inicio de sesión, el agente DEBE declarar:
 - Crear o modificar archivos dentro de `src/`
 - Crear o modificar archivos en `adapters/`
 - Proponer cambios a `standards/` o `knowledge/`
+- Crear o ampliar fichas en `estudio/` a pedido del humano
 
 ### El agente DEBE pedir aprobación antes de:
 - Modificar `CONSTITUTION.md`
@@ -117,7 +118,7 @@ Cuando debas decidir dónde vive un archivo nuevo, aplicar esta distinción:
 | `standards/` | Principios y metodologías de trabajo | Aplica **independientemente** de la tecnología o herramienta usada |
 | `adapters/` | Convenciones de una herramienta o tecnología específica | Solo aplica si el proyecto **usa esa herramienta**; otro proyecto podría no usarla |
 | `templates/` | Plantillas reutilizables | Es un molde que se reutiliza para crear otros documentos |
-| `templates/` | Plantillas reutilizables | Es un molde que se reutiliza para crear otros documentos |
+| `estudio/` | Fichas de estudio para el humano, fuera del contexto de trabajo del agente | Es un concepto que el humano pidió entender (ver `standards/estudio.md`) |
 
 **Regla de distinción clave — standards vs adapters:**
 Si la convención aplica igual en un proyecto React que en uno de NestJS que en uno sin código → va en `standards/`.
@@ -137,6 +138,8 @@ En caso de conflicto entre fuentes, aplicar en este orden:
 4. `knowledge/` — contexto de negocio
 5. `adapters/` — especificidades de la herramienta
 6. El código en `src/` — estado actual de implementación
+
+`estudio/` no es fuente de verdad ni entra en esta jerarquía.
 
 ---
 

@@ -1,6 +1,7 @@
 # Agentes
 
-- **Última actualización:** 2026-09-28
+- **Última actualización:** 2026-10-15
+- **Lectura:** siempre
 
 ---
 
@@ -160,3 +161,4 @@ Si el orquestador o modelo tiene convenciones propias (ej. archivos de configura
 - **2026-09-28** — Git: la prohibición total se reemplaza por las operaciones permitidas en [017] (actualizar `main`, crear/cambiar a la rama de la tarea). Regla del board: los cambios propios de una tarea viajan en su rama.
 - **2026-09-28** — Esquema de `meta`: agregado `inicializado` (dispara el flujo de `standards/inicializacion.md` cuando es `false`). Según [018].
 - **2026-09-28** — Límites del agente: la referencia a [017] se reemplaza por la sección "Sobre git", para que la regla sea autocontenida en proyectos donde `decisions/` no incluye la [017].
+- **2026-10-15** — Encabezado: agregado el campo `Lectura` (siempre).
