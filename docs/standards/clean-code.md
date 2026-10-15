@@ -1,6 +1,7 @@
 # Clean Code
 
-- **Última actualización:** 2026-06-22
+- **Última actualización:** 2026-10-15
+- **Lectura:** cuando la tarea produce o modifica código
 
 ---
 
@@ -128,3 +129,9 @@ Una abstracción incorrecta es más cara que duplicación.
 - Las convenciones de nomenclatura de archivos están en `standards/convenciones.md`
 - Los patrones de arquitectura están en `standards/clean-architecture.md`
 - Las reglas específicas del lenguaje o framework están en su adapter correspondiente
+
+---
+
+## Historial de cambios
+
+- **2026-10-15** — Encabezado: agregado el campo `Lectura` (cuando la tarea produce o modifica código).

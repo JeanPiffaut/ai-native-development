@@ -1,6 +1,7 @@
 # Clean Architecture
 
-- **Última actualización:** 2026-06-22
+- **Última actualización:** 2026-10-15
+- **Lectura:** cuando la tarea produce o modifica código
 
 ---
 
@@ -166,3 +167,9 @@ src/
 - Los patrones de escritura de código están en `standards/clean-code.md`
 - La estructura específica de carpetas según el framework está en su adapter correspondiente
 - Si el proyecto adopta una variante (Hexagonal, DDD), documentar en una nueva decisión en `decisions/`
+
+---
+
+## Historial de cambios
+
+- **2026-10-15** — Encabezado: agregado el campo `Lectura` (cuando la tarea produce o modifica código).

@@ -1,6 +1,7 @@
 # Estudio
 
 - **Última actualización:** 2026-10-15
+- **Lectura:** siempre
 
 ---
 
@@ -96,3 +97,9 @@ Las preguntas no incluyen respuestas. Si el humano quiere, responde en la sesió
 - No obliga a crear fichas en cada tarea
 - No reemplaza el registro de decisiones ni el glosario de `knowledge/dominio.md` (términos del negocio, no de las herramientas)
 - No decide qué debe estudiar el humano — solo responde a lo que pide
+
+---
+
+## Historial de cambios
+
+- **2026-10-15** — Encabezado: agregado el campo `Lectura` (siempre).

@@ -13,7 +13,7 @@ Si no se indicó un id, lista las tareas de `docs/board.json` y pide cuál. Si e
 
 Lee la tarea completa (`contexto` y `notas`) y todo lo que la toca:
 - Su `decision_relacionada` y las demás decisiones de `docs/decisions/INDEX.md` relacionadas con el tema
-- Los standards y adapters que aplican
+- Los standards con lectura condicional cuya condición cumple la tarea (campo `Lectura` en su encabezado) y los adapters que aplican
 - Los archivos del proyecto que la tarea va a tocar
 
 No uses `docs/estudio/` como contexto (ver `docs/standards/estudio.md`).

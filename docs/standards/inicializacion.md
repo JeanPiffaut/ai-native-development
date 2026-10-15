@@ -1,6 +1,7 @@
 # Inicialización
 
-- **Última actualización:** 2026-09-28
+- **Última actualización:** 2026-10-15
+- **Lectura:** cuando `board.json` tiene `meta.inicializado: false`
 
 ---
 
@@ -92,3 +93,4 @@ Los ajustes posteriores al marco de trabajo no requieren reinicializar: se trata
 - No borra ni mueve archivos del proyecto fuera de `docs/` sin aprobación
 - No completa `knowledge/` con contenido inventado
 - No reemplaza el protocolo de `CONSTITUTION.md` una vez que el proyecto está inicializado
+- **2026-10-15** — Encabezado: agregado el campo `Lectura` (cuando `board.json` tiene `meta.inicializado: false`).

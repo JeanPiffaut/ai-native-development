@@ -17,8 +17,8 @@ Al comenzar cualquier sesión, el agente DEBE leer en este orden:
 4. `knowledge/principios.md`
 5. `board.json` — para entender el estado actual del trabajo
 6. `decisions/INDEX.md` — índice temático de todas las decisiones; incluye sección "Recientes" con las últimas confirmadas
-7. Todos los archivos en `standards/` — cada archivo es un estándar independiente; leerlos todos
-8. El adapter relevante en `adapters/` según la tarea a realizar
+7. Los archivos en `standards/` con `Lectura: siempre` en su encabezado — cada archivo es un estándar independiente
+8. Al abordar una tarea: los standards con lectura condicional cuya condición se cumple, y el adapter relevante en `adapters/`
 
 Si alguno de estos archivos no existe todavía, continuar sin él e informar al usuario.
 
