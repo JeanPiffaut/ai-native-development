@@ -67,20 +67,46 @@
       "id": "0011",
       "titulo": "Separar reglas de procedimientos y mover los procedimientos a skills",
       "tipo": "investigacion",
-      "estado": "pendiente",
+      "estado": "haciendo",
       "prioridad": "media",
       "contexto": "El protocolo de inicio (CONSTITUTION §1) lee todo standards/ en cada sesión, aunque parte de su contenido son procedimientos que se usan rara vez (ej. inicializacion.md) o solo en ciertas tareas. Las skills (formato abierto SKILL.md, agentskills.io) se cargan por divulgación progresiva: solo nombre y descripción al inicio, el cuerpo al usarse. Mover los procedimientos a skills ahorraría contexto, pero las reglas que deben aplicar siempre no pueden depender de que una skill se cargue.",
       "notas": [
         "Entregables esperados: inventario de cada standard separando regla (siempre leída) de procedimiento (candidato a skill); ubicación de las skills que preserve el principio agnóstico (verificar qué carpetas usa cada herramienta compatible con SKILL.md); impacto en CONSTITUTION §1, §7 y §8, en [003]/[015] y en [021]; propuesta de decisión.",
-        "Fuentes consultadas al proponerla (2026-10-15): https://agentskills.io y https://code.claude.com/docs/en/skills"
+        "Fuentes consultadas al proponerla (2026-10-15): https://agentskills.io y https://code.claude.com/docs/en/skills",
+        "Hallazgos (2026-10-15): lectura de inicio ≈ 9.500 palabras, standards/ = 5.463 (57%). Carpetas de skills: Codex solo .agents/skills (learn.chatgpt.com/docs/build-skills); Cursor .agents/skills y .cursor/skills, más .claude/skills por compatibilidad (cursor.com/docs/context/skills); VS Code/Copilot .github/skills, .claude/skills y .agents/skills (code.visualstudio.com/docs/copilot/customization/agent-skills); Gemini CLI .gemini/skills y .agents/skills (geminicli.com/docs/cli/skills); Claude Code documenta solo .claude/skills (code.claude.com/docs/en/skills). Spec: agentskills.io/specification — name debe coincidir con la carpeta; carga progresiva ~100 tokens de metadata por skill."
       ],
-      "decision_relacionada": null,
+      "decision_relacionada": "022",
+      "creada": "2026-10-15"
+    },
+    {
+      "id": "0012",
+      "titulo": "Lectura condicional declarada en cada standard",
+      "tipo": "proceso",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "contexto": "Según la decisión 022, cada standard declara en su encabezado si se lee siempre o bajo una condición (ej. clean-code y clean-architecture solo cuando la tarea produce código). CONSTITUTION §1 lee al inicio solo los de lectura 'siempre'. Reduce contexto sin depender de skills.",
+      "notas": [],
+      "decision_relacionada": "022",
+      "creada": "2026-10-15"
+    },
+    {
+      "id": "0013",
+      "titulo": "Mover procedimientos de standards a skills",
+      "tipo": "proceso",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "contexto": "Según la decisión 022, los procedimientos salen de standards/ y pasan a skills: inicializar (desde inicializacion.md), decision (desde CONSTITUTION §3 y agentes.md), estudiar (detalle de estudio.md), tarea y cerrar (procedimientos de flujo.md y agentes.md). Cada regla que se queda nombra la skill a seguir; CONSTITUTION incorpora el respaldo de leer el SKILL.md directamente.",
+      "notas": [
+        "Evaluar aquí el prompt de inicialización (templates/prompt-inicializacion.md) como parte de la skill inicializar; pendiente aclarar con el humano si se borra en proyectos derivados después de usarse.",
+        "Puede dividirse en una tarea por skill si resulta grande."
+      ],
+      "decision_relacionada": "022",
       "creada": "2026-10-15"
     }
   ],
   "meta": {
     "inicializado": true,
-    "ultimo_id": "0011",
+    "ultimo_id": "0013",
     "historial": [
       {
         "id": "0003",
