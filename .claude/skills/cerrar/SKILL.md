@@ -19,11 +19,11 @@ Verifica que lo trabajado quedó reflejado donde corresponde y corrige lo que fa
 
 ## 3. Borradores
 
-Lista las decisiones en `BORRADOR` y cualquier otra propuesta pendiente de aprobación. Para cada una, resume en una línea qué decide y pregunta si se confirma, se ajusta o se descarta. Confirma solo con aprobación explícita; al confirmar, actualiza `docs/decisions/INDEX.md`.
+Lista las decisiones en `BORRADOR` y cualquier otra propuesta pendiente de aprobación. Para cada una, resume en una línea qué decide y pregunta si se confirma, se ajusta o se descarta. Confirma solo con aprobación explícita, con la skill `decision`.
 
 ## 4. Board
 
-Actualiza `docs/board.json` según `docs/standards/agentes.md`:
+Actualiza `docs/board.json` con la skill `board`:
 - Tareas trabajadas: `estado` y `notas` al día
 - Tareas que el humano confirma como completadas: a `meta.historial` si tienen `decision_relacionada`, recrear si son recurrentes, y eliminar de `tareas`
 - Tareas nuevas descubiertas en la sesión, si no se agregaron ya
