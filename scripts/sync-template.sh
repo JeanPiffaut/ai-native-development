@@ -20,6 +20,7 @@ BASE_PATHS=(
   .gitignore
   .env.example
   scripts
+  .claude/skills
   docs/CONSTITUTION.md
   docs/standards
   docs/adapters
