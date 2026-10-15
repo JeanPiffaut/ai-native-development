@@ -37,22 +37,6 @@
       "creada": "2026-09-28"
     },
     {
-      "id": "0009",
-      "titulo": "Skills de sesión, tarea y estudio para Claude Code: /iniciar, /tarea, /cerrar, /estudiar",
-      "tipo": "proceso",
-      "estado": "haciendo",
-      "prioridad": "media",
-      "contexto": "Los procedimientos de inicio de sesión, arranque de tarea y cierre de sesión se repiten a mano en cada sesión. Se quieren skills de Claude Code que los ejecuten de forma consistente, ubicadas fuera de docs/ (en .claude/skills/) para que se puedan llevar a otros proyectos, como envoltorios delgados que remiten a CONSTITUTION y standards sin duplicar reglas.",
-      "notas": [
-        "Criterios de aceptación: las cuatro skills existen en .claude/skills/ y aparecen en el menú /; ninguna duplica reglas de CONSTITUTION o standards; .claude/skills agregado a BASE_PATHS del sync; adapters/claude.md las documenta; decisión 021 registrada.",
-        "Alcance acordado: /iniciar — ejecuta el protocolo de inicio (CONSTITUTION §1) y entrega la declaración. /tarea <id> — analiza la tarea completa (contexto, decisiones y standards relacionados, alcance, criterios) para empezar a trabajarla en conjunto. /cerrar — cierre de sesión (CONSTITUTION §6): actualizar documentación tocada, presentar decisiones y documentos en BORRADOR para que el humano los cierre, y actualizar el board con lo trabajado.",
-        "Agregada /estudiar <tema>: el humano pide entender algo que no está en los documentos del proyecto ni en su documentación. Sigue standards/estudio.md: busca si ya hay ficha (por nombre o estudio/INDEX.md, sin leer otras fichas); si existe la amplía, si no la crea con templates/estudio.md; consulta fuentes primarias en la web; actualiza estudio/INDEX.md.",
-        "Verificado en https://code.claude.com/docs/en/skills (2026-10-15): skills en .claude/skills/<nombre>/SKILL.md; .claude/commands es formato heredado; disable-model-invocation, argument-hint y $ARGUMENTS disponibles."
-      ],
-      "decision_relacionada": "021",
-      "creada": "2026-10-15"
-    },
-    {
       "id": "0010",
       "titulo": "Renombrar adapters/claude.md para que Claude Code no lo cargue como CLAUDE.md",
       "tipo": "deuda",
@@ -67,10 +51,12 @@
       "id": "0012",
       "titulo": "Lectura condicional declarada en cada standard",
       "tipo": "proceso",
-      "estado": "pendiente",
+      "estado": "haciendo",
       "prioridad": "media",
       "contexto": "Según la decisión 022, cada standard declara en su encabezado si se lee siempre o bajo una condición (ej. clean-code y clean-architecture solo cuando la tarea produce código). CONSTITUTION §1 lee al inicio solo los de lectura 'siempre'. Reduce contexto sin depender de skills.",
-      "notas": [],
+      "notas": [
+        "Criterios de aceptación: todos los standards declaran Lectura en su encabezado; CONSTITUTION §1 y convenciones.md reflejan la regla; /tarea carga los standards condicionales que aplican; cada standard editado registra el cambio en su historial."
+      ],
       "decision_relacionada": "022",
       "creada": "2026-10-15"
     },
@@ -116,6 +102,12 @@
         "titulo": "Método de estudio: fichas por concepto a pedido del humano",
         "completada": "2026-10-15",
         "decision_relacionada": "020"
+      },
+      {
+        "id": "0009",
+        "titulo": "Skills de sesión, tarea y estudio para Claude Code: /iniciar, /tarea, /cerrar, /estudiar",
+        "completada": "2026-10-15",
+        "decision_relacionada": "021"
       },
       {
         "id": "0011",

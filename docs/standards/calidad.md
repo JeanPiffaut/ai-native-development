@@ -1,6 +1,7 @@
 # Calidad
 
-- **Última actualización:** 2026-06-22
+- **Última actualización:** 2026-10-15
+- **Lectura:** siempre
 
 ---
 
@@ -40,3 +41,4 @@ Antes de implementar algo que parezca contradecir una decisión confirmada:
 ## Historial de cambios
 
 - **2026-06-22** — Checklist de entrega: "estado actualizado" → "registrada en meta.historial y eliminada de tareas". Criterios de aceptación: se documenta que se registran como primera entrada en `notas` de la tarea.
+- **2026-10-15** — Encabezado: agregado el campo `Lectura` (siempre).
