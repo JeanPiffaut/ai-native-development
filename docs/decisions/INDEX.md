@@ -9,9 +9,9 @@ Actualizar al confirmar cada nueva decisión: agregar a la sección temática co
 
 Las últimas decisiones confirmadas — para contexto de cambios recientes:
 
+- **[016]** [prompt de inicialización desde chat externo](016-prompt-de-inicializacion-desde-chat-externo.md) — prompt genérico para pegar al cierre de una conversación de ideación en una app externa; vive como asset de la skill `inicializar` y se propone eliminarlo del proyecto al terminar la inicialización — 2026-10-15
 - **[022]** [reglas, referencias y procedimientos](022-reglas-referencias-y-procedimientos.md) — el contenido se separa en reglas (se leen siempre), referencias condicionales (cada standard declara cuándo se lee) y procedimientos (viven en skills de `.claude/skills/`, nombrados por la regla que los exige); respaldo: leer el `SKILL.md` directo — 2026-10-15
 - **[021]** [skills como envoltorios de standards](021-skills-como-envoltorios-de-standards.md) — `/iniciar`, `/tarea`, `/cerrar` y `/estudiar` en `.claude/skills/`; invocación humana salvo `/estudiar` *(superada parcialmente por [022])* — 2026-10-15
-- **[020]** [fichas de estudio a pedido](020-fichas-de-estudio-a-pedido.md) — `docs/estudio/` guarda fichas por concepto que el humano pide para entender lo que se usa, con fuentes primarias verificadas y preguntas de comprensión; queda fuera del contexto de trabajo del agente y de la jerarquía de fuentes — 2026-10-15
 
 ---
 
@@ -31,6 +31,7 @@ Las últimas decisiones confirmadas — para contexto de cambios recientes:
 - **[017]** [rama git por tarea](017-rama-git-por-tarea.md) — refina [010]: una tarea = una rama; el agente actualiza `main` y crea/cambia de rama; commit, push y merge son humanos
 - **[018]** [flujo de inicialización adaptable](018-flujo-de-inicializacion-adaptable.md) — cada proyecto adapta la base al inicializarse (`meta.inicializado` + `standards/inicializacion.md`); se descartan variantes de template por tipo de proyecto
 - **[019]** [sincronización de template por script](019-sincronizacion-de-template-por-script.md) — implementa [005] con `scripts/sync-template.sh`: lista explícita de archivos genéricos; commit y merge a `template` son humanos
+- **[016]** [prompt de inicialización desde chat externo](016-prompt-de-inicializacion-desde-chat-externo.md) — insumo opcional del diagnóstico de [018]: resumen ordenado de una ideación externa; asset de la skill `inicializar`, de un solo uso
 - **[020]** [fichas de estudio a pedido](020-fichas-de-estudio-a-pedido.md) — método de estudio para que el humano no pierda de vista lo que se usa: fichas por concepto en `estudio/`, a pedido, fuera del contexto del agente; `standards/estudio.md` + `templates/estudio.md`
 
 ## Estructura de archivos y herramientas

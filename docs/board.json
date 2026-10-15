@@ -15,17 +15,6 @@
       "creada": "2026-06-22"
     },
     {
-      "id": "0002",
-      "titulo": "Crear prompt de inicialización para bootstrap desde chat externo",
-      "tipo": "feature",
-      "estado": "haciendo",
-      "prioridad": "media",
-      "contexto": "El usuario valida ideas de proyectos nuevos en chats con otros agentes antes de traerlos a este framework. Se necesita un prompt reutilizable en templates/ que extraiga esa información y la estructure en knowledge/ y, cuando corresponda, como decisiones borrador en decisions/.",
-      "notas": [],
-      "decision_relacionada": "016",
-      "creada": "2026-07-29"
-    },
-    {
       "id": "0007",
       "titulo": "Corregir typo ENVIROMENT en .env.example",
       "tipo": "deuda",
@@ -45,20 +34,6 @@
       "contexto": "En sistemas de archivos que no distinguen mayúsculas (macOS por defecto), Claude Code toma docs/adapters/claude.md como un CLAUDE.md anidado y lo carga solo al tocar archivos de esa carpeta. El adapter entra al contexto sin que el protocolo lo pida. Renombrarlo (ej. claude-code.md) y actualizar sus referencias lo evita.",
       "notas": [],
       "decision_relacionada": null,
-      "creada": "2026-10-15"
-    },
-    {
-      "id": "0013",
-      "titulo": "Mover procedimientos de standards a skills",
-      "tipo": "proceso",
-      "estado": "pendiente",
-      "prioridad": "media",
-      "contexto": "Según la decisión 022, los procedimientos salen de standards/ y pasan a skills: inicializar (desde inicializacion.md), decision (desde CONSTITUTION §3 y agentes.md), estudiar (detalle de estudio.md), tarea y cerrar (procedimientos de flujo.md y agentes.md). Cada regla que se queda nombra la skill a seguir; CONSTITUTION incorpora el respaldo de leer el SKILL.md directamente.",
-      "notas": [
-        "Evaluar aquí el prompt de inicialización (templates/prompt-inicializacion.md) como parte de la skill inicializar; pendiente aclarar con el humano si se borra en proyectos derivados después de usarse.",
-        "Puede dividirse en una tarea por skill si resulta grande."
-      ],
-      "decision_relacionada": "022",
       "creada": "2026-10-15"
     }
   ],
@@ -105,6 +80,18 @@
       {
         "id": "0012",
         "titulo": "Lectura condicional declarada en cada standard",
+        "completada": "2026-10-15",
+        "decision_relacionada": "022"
+      },
+      {
+        "id": "0002",
+        "titulo": "Crear prompt de inicialización para bootstrap desde chat externo",
+        "completada": "2026-10-15",
+        "decision_relacionada": "016"
+      },
+      {
+        "id": "0013",
+        "titulo": "Mover procedimientos de standards a skills",
         "completada": "2026-10-15",
         "decision_relacionada": "022"
       }

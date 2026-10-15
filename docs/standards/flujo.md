@@ -23,13 +23,7 @@
 
 ### 3. Implementar
 
-**Rama de la tarea** — antes de tocar cualquier archivo:
-1. `git status` — si hay cambios sin commitear, detenerse y avisar al humano (no hacer stash ni descartar nada)
-2. Si la rama de la tarea ya existe: `git checkout <tipo>/<id>-<slug>` y continuar
-3. Si no existe: `git checkout main` → `git pull --ff-only` → `git checkout -b <tipo>/<id>-<slug>`
-4. Si `pull --ff-only` falla o hay cualquier error, detenerse y avisar al humano
-
-Nombre de rama: `<tipo>/<id>-<slug-en-kebab-case>` con `tipo` e `id` de la tarea (ej. `feature/0002-prompt-inicializacion`). Las operaciones git permitidas al agente están en `standards/agentes.md` — sección "Sobre git".
+**Rama de la tarea** — antes de tocar cualquier archivo, la tarea se trabaja en su propia rama `<tipo>/<id>-<slug-en-kebab-case>`, creada desde `main` actualizado y solo con las operaciones permitidas en `standards/agentes.md` ("Sobre git"). Si hay cambios sin commitear o algo falla, el agente se detiene y avisa. Los pasos están en la skill `tarea`.
 
 - Seguir convenciones definidas en `standards/convenciones.md`
 - Seguir el adapter correspondiente si aplica (`adapters/`)
@@ -41,9 +35,8 @@ Nombre de rama: `<tipo>/<id>-<slug-en-kebab-case>` con `tipo` e `id` de la tarea
 - Ver `standards/calidad.md` para criterios mínimos
 
 ### 5. Registrar
-- Si la tarea tiene `decision_relacionada`, registrarla en `meta.historial` de `board.json`
-- Eliminar la tarea de `board.json` (las tareas completadas no tienen estado — se eliminan)
-- Si se tomaron decisiones relevantes, confirmarlas en `decisions/`
+- Completar la tarea en `board.json` con la skill `board`, en la rama de la tarea
+- Si se tomaron decisiones relevantes, confirmarlas con la skill `decision`
 - Si se descubrió algo que cambia `knowledge/`, proponer actualización al humano
 - Dejar la rama lista para el humano: indicar qué commitear y con qué mensaje. Commit, push y merge a `main` son humanos
 
@@ -93,3 +86,4 @@ No interrumpir el flujo de trabajo para resolver problemas colaterales salvo que
 - **2026-09-28** — Paso 3 "Implementar": agregado bloque "Rama de la tarea" (una tarea = una rama `<tipo>/<id>-<slug>` desde `main` actualizado). Paso 5: la rama queda lista para commit y merge humano. Según [017].
 - **2026-09-28** — Paso 3: la referencia a [017] se reemplaza por `standards/agentes.md` ("Sobre git"), para que la regla sea autocontenida en proyectos derivados de `template`.
 - **2026-10-15** — Encabezado: agregado el campo `Lectura` (siempre).
+- **2026-10-15** — Paso 3: los pasos de git para crear la rama pasan a la skill `tarea`; queda la regla. Paso 5: completar la tarea y confirmar decisiones remiten a las skills `board` y `decision`.

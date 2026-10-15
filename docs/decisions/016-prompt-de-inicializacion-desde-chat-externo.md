@@ -1,6 +1,6 @@
 # [016] Prompt de extracción de idea para apps externas como template
 
-- **Estado:** BORRADOR
+- **Estado:** CONFIRMADA
 - **Fecha:** 2026-07-29
 - **Supera a:** *(ninguna)*
 - **Superada por:** *(ninguna)*
@@ -64,6 +64,12 @@ para completar `docs/knowledge/` y proponer borradores en `docs/decisions/`
 según el protocolo ya existente — sin necesidad de un prompt de importación
 especializado.
 
+**Ubicación (ajustada el 2026-10-15, antes de confirmar):** el prompt vive en
+`.claude/skills/inicializar/assets/prompt-externo.md`, como asset de la skill
+`inicializar` ([022]), y deja de estar en `docs/templates/`. Es de un solo uso:
+al terminar la inicialización de un proyecto derivado, la skill propone
+eliminarlo junto con ella. En el repositorio del framework se conserva.
+
 ## Consecuencias
 
 - `docs/templates/` gana un tipo de template distinto a los existentes (es un
@@ -79,8 +85,12 @@ especializado.
   es la referencia para reconsiderar la Opción D (carpeta `docs/prompts/`)
 - No cambia el protocolo de aprobación humana existente: las decisiones que
   el agente proponga al importar el resumen siguen naciendo como BORRADOR
+- Con la ubicación en la skill `inicializar`, la consecuencia sobre
+  `docs/templates/` deja de aplicar: el prompt no agrega un tipo nuevo de
+  template
 
 ## Referencias
 
 Relacionado conceptualmente con [006] (sin templates para board y adapters)
 como precedente de decisiones sobre qué entra o no en `templates/`.
+[022] Reglas, referencias y procedimientos — los procedimientos viven en skills.

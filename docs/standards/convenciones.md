@@ -58,7 +58,7 @@ Todo archivo en `standards/` debe comenzar con:
 
 ## Estructura de board.json
 
-Ver esquema completo en `standards/agentes.md` (sección "Cómo actualizar el board").
+Ver esquema completo en la skill `board`; las reglas en `standards/agentes.md` (sección "Board").
 Los campos `id`, `titulo`, `estado` y `tipo` son obligatorios en toda tarea.
 
 ## Versionado de standards
@@ -73,3 +73,4 @@ Cuando un archivo en `standards/` cambia de forma significativa:
 
 - **2026-06-22** — Referencia de schema de board.json corregida: de `board.json` a `standards/agentes.md`.
 - **2026-10-15** — Encabezado: agregado el campo `Lectura` (siempre). Nueva sección "Estructura de un archivo de standards": encabezado obligatorio con el campo `Lectura` y sus valores.
+- **2026-10-15** — Estructura de board.json: el esquema se referencia en la skill `board`.

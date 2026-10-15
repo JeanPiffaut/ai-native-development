@@ -1,6 +1,6 @@
 # Negocio
 
-- **Última actualización:** 2026-09-28
+- **Última actualización:** 2026-10-15
 
 ---
 
@@ -21,7 +21,7 @@ Desarrolladores o equipos pequeños que usan agentes de IA como parte activa del
 
 ## Modelo de valor
 
-La rama `template` se lleva a la raíz de un proyecto, nuevo o existente, de software o de cualquier otra naturaleza (documentación, investigación, datos, operación, contenido). En la primera sesión el agente detecta que el proyecto no está inicializado y sigue `standards/inicializacion.md`: diagnostica el proyecto y, con aprobación humana, adapta knowledge, standards, adapters, templates y flujos a lo que ese proyecto necesita. Desde ahí, el agente lee `CLAUDE.md` al iniciar → carga `docs/CONSTITUTION.md` → sigue el protocolo de lectura → trabaja con contexto completo sin instrucciones adicionales del usuario.
+La rama `template` se lleva a la raíz de un proyecto, nuevo o existente, de software o de cualquier otra naturaleza (documentación, investigación, datos, operación, contenido). En la primera sesión el agente detecta que el proyecto no está inicializado y sigue la skill `inicializar`: diagnostica el proyecto y, con aprobación humana, adapta knowledge, standards, adapters, templates y flujos a lo que ese proyecto necesita. Desde ahí, el agente lee `CLAUDE.md` al iniciar → carga `docs/CONSTITUTION.md` → sigue el protocolo de lectura → trabaja con contexto completo sin instrucciones adicionales del usuario.
 
 ## Estado actual
 
@@ -45,3 +45,4 @@ Framework base funcional con CONSTITUTION, standards, adapters y templates. `mai
 ## Historial de cambios
 
 - **2026-09-28** — Modelo de valor y estado actual: el framework se lleva desde la rama `template` y se adapta a cada proyecto (no solo software) mediante el flujo de inicialización; se descarta el plan de variantes de template. Según [018].
+- **2026-10-15** — Modelo de valor: la inicialización se sigue con la skill `inicializar` (antes `standards/inicializacion.md`). Según [022].
