@@ -48,19 +48,6 @@
       "creada": "2026-10-15"
     },
     {
-      "id": "0012",
-      "titulo": "Lectura condicional declarada en cada standard",
-      "tipo": "proceso",
-      "estado": "haciendo",
-      "prioridad": "media",
-      "contexto": "Según la decisión 022, cada standard declara en su encabezado si se lee siempre o bajo una condición (ej. clean-code y clean-architecture solo cuando la tarea produce código). CONSTITUTION §1 lee al inicio solo los de lectura 'siempre'. Reduce contexto sin depender de skills.",
-      "notas": [
-        "Criterios de aceptación: todos los standards declaran Lectura en su encabezado; CONSTITUTION §1 y convenciones.md reflejan la regla; /tarea carga los standards condicionales que aplican; cada standard editado registra el cambio en su historial."
-      ],
-      "decision_relacionada": "022",
-      "creada": "2026-10-15"
-    },
-    {
       "id": "0013",
       "titulo": "Mover procedimientos de standards a skills",
       "tipo": "proceso",
@@ -112,6 +99,12 @@
       {
         "id": "0011",
         "titulo": "Separar reglas de procedimientos y mover los procedimientos a skills",
+        "completada": "2026-10-15",
+        "decision_relacionada": "022"
+      },
+      {
+        "id": "0012",
+        "titulo": "Lectura condicional declarada en cada standard",
         "completada": "2026-10-15",
         "decision_relacionada": "022"
       }
