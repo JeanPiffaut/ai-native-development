@@ -1,6 +1,6 @@
 # [016] Prompt de extracción de idea para apps externas como template
 
-- **Estado:** BORRADOR
+- **Estado:** CONFIRMADA
 - **Fecha:** 2026-07-29
 - **Supera a:** *(ninguna)*
 - **Superada por:** *(ninguna)*
