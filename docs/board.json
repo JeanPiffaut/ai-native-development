@@ -62,11 +62,25 @@
       "notas": [],
       "decision_relacionada": null,
       "creada": "2026-10-15"
+    },
+    {
+      "id": "0011",
+      "titulo": "Separar reglas de procedimientos y mover los procedimientos a skills",
+      "tipo": "investigacion",
+      "estado": "pendiente",
+      "prioridad": "media",
+      "contexto": "El protocolo de inicio (CONSTITUTION §1) lee todo standards/ en cada sesión, aunque parte de su contenido son procedimientos que se usan rara vez (ej. inicializacion.md) o solo en ciertas tareas. Las skills (formato abierto SKILL.md, agentskills.io) se cargan por divulgación progresiva: solo nombre y descripción al inicio, el cuerpo al usarse. Mover los procedimientos a skills ahorraría contexto, pero las reglas que deben aplicar siempre no pueden depender de que una skill se cargue.",
+      "notas": [
+        "Entregables esperados: inventario de cada standard separando regla (siempre leída) de procedimiento (candidato a skill); ubicación de las skills que preserve el principio agnóstico (verificar qué carpetas usa cada herramienta compatible con SKILL.md); impacto en CONSTITUTION §1, §7 y §8, en [003]/[015] y en [021]; propuesta de decisión.",
+        "Fuentes consultadas al proponerla (2026-10-15): https://agentskills.io y https://code.claude.com/docs/en/skills"
+      ],
+      "decision_relacionada": null,
+      "creada": "2026-10-15"
     }
   ],
   "meta": {
     "inicializado": true,
-    "ultimo_id": "0010",
+    "ultimo_id": "0011",
     "historial": [
       {
         "id": "0003",
