@@ -1,6 +1,6 @@
 # [022] Separar reglas, referencias condicionales y procedimientos; los procedimientos viven en skills
 
-- **Estado:** BORRADOR
+- **Estado:** CONFIRMADA
 - **Fecha:** 2026-10-15
 - **Supera a:** 021 (parcialmente: las skills dejan de ser solo envoltorios para los procedimientos)
 - **Superada por:** —

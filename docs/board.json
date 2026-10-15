@@ -64,21 +64,6 @@
       "creada": "2026-10-15"
     },
     {
-      "id": "0011",
-      "titulo": "Separar reglas de procedimientos y mover los procedimientos a skills",
-      "tipo": "investigacion",
-      "estado": "haciendo",
-      "prioridad": "media",
-      "contexto": "El protocolo de inicio (CONSTITUTION §1) lee todo standards/ en cada sesión, aunque parte de su contenido son procedimientos que se usan rara vez (ej. inicializacion.md) o solo en ciertas tareas. Las skills (formato abierto SKILL.md, agentskills.io) se cargan por divulgación progresiva: solo nombre y descripción al inicio, el cuerpo al usarse. Mover los procedimientos a skills ahorraría contexto, pero las reglas que deben aplicar siempre no pueden depender de que una skill se cargue.",
-      "notas": [
-        "Entregables esperados: inventario de cada standard separando regla (siempre leída) de procedimiento (candidato a skill); ubicación de las skills que preserve el principio agnóstico (verificar qué carpetas usa cada herramienta compatible con SKILL.md); impacto en CONSTITUTION §1, §7 y §8, en [003]/[015] y en [021]; propuesta de decisión.",
-        "Fuentes consultadas al proponerla (2026-10-15): https://agentskills.io y https://code.claude.com/docs/en/skills",
-        "Hallazgos (2026-10-15): lectura de inicio ≈ 9.500 palabras, standards/ = 5.463 (57%). Carpetas de skills: Codex solo .agents/skills (learn.chatgpt.com/docs/build-skills); Cursor .agents/skills y .cursor/skills, más .claude/skills por compatibilidad (cursor.com/docs/context/skills); VS Code/Copilot .github/skills, .claude/skills y .agents/skills (code.visualstudio.com/docs/copilot/customization/agent-skills); Gemini CLI .gemini/skills y .agents/skills (geminicli.com/docs/cli/skills); Claude Code documenta solo .claude/skills (code.claude.com/docs/en/skills). Spec: agentskills.io/specification — name debe coincidir con la carpeta; carga progresiva ~100 tokens de metadata por skill."
-      ],
-      "decision_relacionada": "022",
-      "creada": "2026-10-15"
-    },
-    {
       "id": "0012",
       "titulo": "Lectura condicional declarada en cada standard",
       "tipo": "proceso",
@@ -131,6 +116,12 @@
         "titulo": "Método de estudio: fichas por concepto a pedido del humano",
         "completada": "2026-10-15",
         "decision_relacionada": "020"
+      },
+      {
+        "id": "0011",
+        "titulo": "Separar reglas de procedimientos y mover los procedimientos a skills",
+        "completada": "2026-10-15",
+        "decision_relacionada": "022"
       }
     ]
   }

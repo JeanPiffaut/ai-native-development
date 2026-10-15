@@ -1,9 +1,9 @@
 # [021] Skills de Claude Code como envoltorios delgados de CONSTITUTION y standards
 
-- **Estado:** BORRADOR
+- **Estado:** CONFIRMADA
 - **Fecha:** 2026-10-15
 - **Supera a:** —
-- **Superada por:** —
+- **Superada por:** 022 *(parcialmente — para los procedimientos, la skill pasa a ser la fuente)*
 
 ---
 

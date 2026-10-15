@@ -9,9 +9,9 @@ Actualizar al confirmar cada nueva decisión: agregar a la sección temática co
 
 Las últimas decisiones confirmadas — para contexto de cambios recientes:
 
+- **[022]** [reglas, referencias y procedimientos](022-reglas-referencias-y-procedimientos.md) — el contenido se separa en reglas (se leen siempre), referencias condicionales (cada standard declara cuándo se lee) y procedimientos (viven en skills de `.claude/skills/`, nombrados por la regla que los exige); respaldo: leer el `SKILL.md` directo — 2026-10-15
+- **[021]** [skills como envoltorios de standards](021-skills-como-envoltorios-de-standards.md) — `/iniciar`, `/tarea`, `/cerrar` y `/estudiar` en `.claude/skills/`; invocación humana salvo `/estudiar` *(superada parcialmente por [022])* — 2026-10-15
 - **[020]** [fichas de estudio a pedido](020-fichas-de-estudio-a-pedido.md) — `docs/estudio/` guarda fichas por concepto que el humano pide para entender lo que se usa, con fuentes primarias verificadas y preguntas de comprensión; queda fuera del contexto de trabajo del agente y de la jerarquía de fuentes — 2026-10-15
-- **[019]** [sincronización de template por script](019-sincronizacion-de-template-por-script.md) — `scripts/sync-template.sh` (lo ejecuta el humano) copia a `template` solo los archivos genéricos de `main` y regenera board e INDEX limpios; los genéricos no referencian decisiones de este proyecto — 2026-09-28
-- **[018]** [flujo de inicialización adaptable](018-flujo-de-inicializacion-adaptable.md) — la rama `template` trae `meta.inicializado: false`; el agente sigue `standards/inicializacion.md` y adapta knowledge, standards, adapters, templates y flujos a cada proyecto, sea o no de software — 2026-09-28
 
 ---
 
@@ -37,6 +37,8 @@ Las últimas decisiones confirmadas — para contexto de cambios recientes:
 
 - **[007]** [Carpeta scripts/ en raíz](007-carpeta-scripts-en-raiz.md) — las herramientas de automatización del proyecto viven en `scripts/` en la raíz, no en `docs/` ni en `src/`
 - **[008]** [.tmp/ para reportes efímeros](008-tmp-para-reportes-efimeros.md) — los reportes generados por herramientas de análisis se guardan en `.tmp/` (gitignored); se procesan en la sesión o se vuelven a generar
+- **[021]** [skills como envoltorios de standards](021-skills-como-envoltorios-de-standards.md) — skills de Claude Code en `.claude/skills/` que ordenan pasos y remiten a CONSTITUTION y standards; viajan a `template` *(superada parcialmente por [022])*
+- **[022]** [reglas, referencias y procedimientos](022-reglas-referencias-y-procedimientos.md) — refina [021]: reglas siempre leídas, referencias con lectura condicional declarada, procedimientos como skills; cada proyecto puede crear skills propias
 
 ## Configuración y entorno
 
