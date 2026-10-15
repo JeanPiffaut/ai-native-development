@@ -1,7 +1,8 @@
 #!/bin/bash
 # Sincroniza la rama template con la parte genérica del framework que vive en main.
-# Crea una rama desde template, copia los archivos base y deja todo sin commitear
-# para revisión humana. El commit y el merge a template son manuales.
+# Crea una rama desde template (o reutiliza la indicada si ya existe, local o en
+# origin), copia los archivos base y deja todo sin commitear para revisión humana.
+# El commit y el merge a template son manuales.
 # Lo ejecuta el humano, no el agente (ver decisions/017 y decisions/019).
 #
 # Uso: scripts/sync-template.sh <rama>
@@ -46,7 +47,21 @@ git checkout "$SOURCE_BRANCH"
 git pull --ff-only
 git checkout "$TEMPLATE_BRANCH"
 git pull --ff-only
-git checkout -b "$TARGET_BRANCH"
+
+# Si la rama ya existe, se reutiliza para seguir commiteando en ella
+if git show-ref --verify --quiet "refs/heads/$TARGET_BRANCH"; then
+  echo "La rama $TARGET_BRANCH ya existe: se reutiliza."
+  git checkout "$TARGET_BRANCH"
+  if git rev-parse --abbrev-ref --symbolic-full-name '@{u}' >/dev/null 2>&1; then
+    git pull --ff-only
+  fi
+elif git ls-remote --exit-code --heads origin "$TARGET_BRANCH" >/dev/null 2>&1; then
+  echo "La rama $TARGET_BRANCH existe en origin: se reutiliza."
+  git fetch origin "$TARGET_BRANCH"
+  git checkout -b "$TARGET_BRANCH" --track "origin/$TARGET_BRANCH"
+else
+  git checkout -b "$TARGET_BRANCH"
+fi
 
 for path in "${BASE_PATHS[@]}"; do
   git rm -r -q --ignore-unmatch -- "$path"
