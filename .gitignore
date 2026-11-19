@@ -1,0 +1,20 @@
+# Rama "compartido" de ai-native-development: este repo es PÚBLICO.
+# En git solo van la estructura, los formatos y los ejemplos. Los datos reales del entorno
+# y los avisos viven solo en local, como un .env: se ignoran siempre.
+
+# Datos reales del entorno: todo lo de entorno/ salvo los ejemplos y su README.
+entorno/*
+!entorno/*.example.md
+!entorno/README.md
+
+# Avisos reales entre proyectos: solo se versiona el ejemplo de formato.
+avisos/*
+!avisos/EJEMPLO.md
+!avisos/README.md
+
+# Respaldo cifrado y llaves (si se usa): nunca en este repo.
+*.age
+*.key
+.env
+.env.*
+.DS_Store
